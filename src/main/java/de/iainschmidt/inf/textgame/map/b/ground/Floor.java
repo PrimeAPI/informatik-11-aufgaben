@@ -3,6 +3,7 @@ package de.iainschmidt.inf.textgame.map.b.ground;
 import de.iainschmidt.inf.textgame.framework.Button;
 import de.iainschmidt.inf.textgame.framework.ButtonOrientation;
 import de.iainschmidt.inf.textgame.framework.GameFrame;
+import de.iainschmidt.inf.textgame.game.Room;
 import de.iainschmidt.inf.textgame.utils.RoomChangeButton;
 
 /**
@@ -34,12 +35,13 @@ public class Floor implements GameFrame {
     @Override
     public Button[] getButtons() {
         return new Button[]{
-                new RoomChangeButton("B02", this, null, ButtonOrientation.LEFT),
-                new RoomChangeButton("B03", this, null, ButtonOrientation.TOP),
-                new RoomChangeButton("B05", this, null, ButtonOrientation.RIGHT),
-                new RoomChangeButton("B08 (Kustsammlung)", this, null, ButtonOrientation.LEFT),
-                new RoomChangeButton("B07 (Kustsammlung)", this, null, ButtonOrientation.BUTTON),
-                new RoomChangeButton("B06 (Kunstraum)", this, null, ButtonOrientation.RIGHT)
+                new RoomChangeButton("B02", this, Room.B_02.getFrame(), ButtonOrientation.LEFT),
+                new RoomChangeButton("Foryer", this, Room.B_FORYER.getFrame(), ButtonOrientation.LEFT),
+                new RoomChangeButton("B03", this, Room. B_03, ButtonOrientation.TOP),
+                new RoomChangeButton("B05", this, Room.B_05, ButtonOrientation.RIGHT),
+                new RoomChangeButton("B08 (Kustsammlung)", this, Room.B_08_SAMMLUNG.getFrame(), ButtonOrientation.LEFT),
+                new RoomChangeButton("B07 (Kustsammlung)", this, Room.B_07, ButtonOrientation.BUTTON),
+                new RoomChangeButton("B06 (Kunstraum)", this, Room.B_06, ButtonOrientation.RIGHT)
         };
     }
 }

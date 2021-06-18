@@ -28,6 +28,7 @@ public class TextGame {
 
     private void loadGame(){
         gui = new GraphicalUserInterface(new HomeScreen());
+        inventory.add(Item.KEY_ART);
     }
 
 

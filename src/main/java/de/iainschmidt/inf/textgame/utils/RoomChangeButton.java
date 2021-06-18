@@ -15,4 +15,7 @@ public class RoomChangeButton extends Button {
     public RoomChangeButton(String text, GameFrame from, GameFrame to, ButtonOrientation orientation) {
         super(text, new RoomChangeAction(from, to, false), orientation);
     }
+    public RoomChangeButton(String text, GameFrame from, Room to, ButtonOrientation orientation) {
+        super(text, new RoomChangeAction(from, to.getFrame(), false), orientation);
+    }
 }

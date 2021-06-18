@@ -39,7 +39,7 @@ public class GraphicalUserInterface extends JFrame {
         add(map);
         JButton inventory = new JButton("Inventar");
         inventory.addActionListener(e -> {
-            new RoomChangeAction(frame, new InventoryFrame(frame)).onClick();
+                openInventory();
         });
         inventory.setBounds(635, 360, 155, 30);
         add(inventory);
@@ -131,6 +131,14 @@ public class GraphicalUserInterface extends JFrame {
 
         revalidate();
         repaint();
+    }
+
+    public void openInventory(){
+        if(frame instanceof InventoryFrame){
+            update(((InventoryFrame) frame).prev);
+        }else {
+            update(new InventoryFrame(this.frame));
+        }
     }
 
 

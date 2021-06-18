@@ -8,25 +8,20 @@ import de.iainschmidt.inf.textgame.game.KeyLevel;
 import de.iainschmidt.inf.textgame.game.Room;
 import de.iainschmidt.inf.textgame.utils.RoomChangeButton;
 
-/**
- * @author Lukas S. PrimeAPI
- * created on 17.06.2021
- * crated for INF-11-Abschlussabgabe
- */
-public class B08Sammlung implements GameFrame, Lockable {
+public class B07Sammlung implements GameFrame, Lockable {
     @Override
     public String getRoomName() {
-        return "B08 - Sammlung";
+        return "B07";
     }
 
     @Override
     public String getTitle() {
-        return "B08 - Kunstsammlung";
+        return "B07 - Kunstsammlung";
     }
 
     @Override
     public String getText() {
-        return "Hier stehen einige Sachen";
+        return "Du bist in einer 2. Knstsammlung";
     }
 
     @Override
@@ -37,9 +32,9 @@ public class B08Sammlung implements GameFrame, Lockable {
     @Override
     public Button[] getButtons() {
         return new Button[]{
-                new RoomChangeButton("B08 (Kunstraum)", this, Room.B_08.getFrame(), ButtonOrientation.LEFT),
-                new RoomChangeButton("Flur", this, Room.B_FLOOR.getFrame(), ButtonOrientation.TOP),
-                new RoomChangeButton("B07 (Kunstsammlung)", this, Room.B_07.getFrame(), ButtonOrientation.RIGHT)
+                new RoomChangeButton("B08 (Kunstsammlung)", this, Room.B_08_SAMMLUNG.getFrame(), ButtonOrientation.LEFT),
+                new RoomChangeButton("Flutr", this, Room.B_FLOOR.getFrame(), ButtonOrientation.TOP),
+                new RoomChangeButton("B06 (Kunstraum)", this, Room.B_06.getFrame(), ButtonOrientation.RIGHT),
         };
     }
 

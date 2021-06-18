@@ -12,7 +12,7 @@ import de.iainschmidt.inf.textgame.utils.RoomChangeAction;
  */
 public class InventoryFrame implements GameFrame {
 
-    GameFrame prev;
+    public GameFrame prev;
 
     public InventoryFrame(GameFrame prev) {
         this.prev = prev;

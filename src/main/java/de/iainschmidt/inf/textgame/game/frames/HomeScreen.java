@@ -31,7 +31,7 @@ public class HomeScreen implements GameFrame {
 
     @Override
     public String getImgPath() {
-        return null;
+        return "img/soon.jpg";
     }
 
     @Override
