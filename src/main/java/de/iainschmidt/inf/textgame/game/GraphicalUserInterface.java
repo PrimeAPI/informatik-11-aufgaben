@@ -1,7 +1,9 @@
 package de.iainschmidt.inf.textgame.game;
 
+import de.iainschmidt.inf.textgame.TextGame;
 import de.iainschmidt.inf.textgame.framework.Button;
 import de.iainschmidt.inf.textgame.framework.GameFrame;
+import de.iainschmidt.inf.textgame.framework.Inventoryable;
 import de.iainschmidt.inf.textgame.game.frames.InventoryFrame;
 import de.iainschmidt.inf.textgame.utils.RoomChangeAction;
 
@@ -31,12 +33,6 @@ public class GraphicalUserInterface extends JFrame {
         setSize(800, 800);
         setTitle(TITLE);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        JButton map = new JButton("Karte");
-        map.addActionListener(e -> {
-            System.out.println("ZEIGE MAP AN");
-        });
-        map.setBounds(470, 360, 155, 30);
-        add(map);
         JButton inventory = new JButton("Inventar");
         inventory.addActionListener(e -> {
                 openInventory();
@@ -63,15 +59,36 @@ public class GraphicalUserInterface extends JFrame {
         add(title);
         components.add(title);
 
+        StringBuilder txt = new StringBuilder(frame.getText());
+
+        if(frame instanceof Inventoryable){
+            txt.append("\n\nItems im Raum:\n");
+            for (Item item : ((Inventoryable) frame).getItems()) {
+                txt.append("- 1x " + item.getDisplayname() + "\n");
+            }
+
+            if(((Inventoryable) frame).getItems().size() >= 1){
+                JButton map = new JButton("Item nehmen");
+                map.addActionListener(e -> {
+                    Item item = ((Inventoryable) frame).getItems().get(0);
+                    TextGame.getInstance().getInventory().add(item);
+                    ((Inventoryable) frame).getItems().remove(item);
+                    update(frame);
+                });
+                map.setBounds(470, 360, 155, 30);
+                add(map);
+                components.add(map);
+            }
+        }
         //Textarea
-        JTextArea textArea = new JTextArea(frame.getText());
+        JTextArea textArea = new JTextArea(txt.toString());
         textArea.setBounds(10, 30, 450, 350);
+        textArea.setEditable(false);
         textArea.setBorder(BorderFactory.createCompoundBorder(
                 textArea.getBorder(),
                 BorderFactory.createEmptyBorder(10, 10, 10, 10)));
         add(textArea);
         components.add(textArea);
-
         //IMGAGE
         ImageIcon imageIcon = new ImageIcon(frame.getImgPath());
         JLabel image = new JLabel();

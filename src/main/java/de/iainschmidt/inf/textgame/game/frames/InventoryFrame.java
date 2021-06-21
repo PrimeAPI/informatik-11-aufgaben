@@ -1,8 +1,10 @@
 package de.iainschmidt.inf.textgame.game.frames;
 
+import de.iainschmidt.inf.textgame.TextGame;
 import de.iainschmidt.inf.textgame.framework.Button;
 import de.iainschmidt.inf.textgame.framework.ButtonOrientation;
 import de.iainschmidt.inf.textgame.framework.GameFrame;
+import de.iainschmidt.inf.textgame.game.Item;
 import de.iainschmidt.inf.textgame.utils.RoomChangeAction;
 
 /**
@@ -30,7 +32,11 @@ public class InventoryFrame implements GameFrame {
 
     @Override
     public String getText() {
-        return "Du hast folgende Items dabei: Bla Bla Bla Bla Bla";
+        String s = "Du hast folgende Items in deiner Tasche:\n";
+        for (Item item : TextGame.getInstance().getInventory()) {
+            s += "- 1x " + item.getDisplayname() + "\n";
+        }
+        return s;
     }
 
     @Override

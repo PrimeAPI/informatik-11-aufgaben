@@ -5,6 +5,7 @@ import de.iainschmidt.inf.textgame.framework.ButtonAction;
 import de.iainschmidt.inf.textgame.framework.GameFrame;
 import de.iainschmidt.inf.textgame.framework.Lockable;
 import de.iainschmidt.inf.textgame.game.Item;
+import de.iainschmidt.inf.textgame.game.Room;
 import de.iainschmidt.inf.textgame.game.frames.ErrorScreen;
 
 /**
@@ -16,6 +17,7 @@ public class RoomChangeAction implements ButtonAction {
 
     public GameFrame from;
     public GameFrame to;
+    public Room room;
     public boolean ignoreKey = false;
 
     public RoomChangeAction(GameFrame from, GameFrame to) {
@@ -29,8 +31,17 @@ public class RoomChangeAction implements ButtonAction {
         this.ignoreKey = ignoreKey;
     }
 
+    public RoomChangeAction(GameFrame from, Room to, boolean ignoreKey) {
+        this.from = from;
+        this.room = to;
+        this.ignoreKey = ignoreKey;
+    }
+
     @Override
     public void onClick() {
+        if(to == null){
+            to = room.getFrame();
+        }
         if(to instanceof Lockable){
             System.out.println("is lockable");
             Lockable lockable = (Lockable) to;
