@@ -1,13 +1,12 @@
 package de.iainschmidt.inf.textgame.framework;
 
+import de.iainschmidt.inf.textgame.game.Item;
 import de.iainschmidt.inf.textgame.game.KeyLevel;
 import de.iainschmidt.inf.textgame.game.Room;
 import de.iainschmidt.inf.textgame.utils.RoomChangeButton;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class RoomFactory {
 
@@ -20,8 +19,9 @@ public class RoomFactory {
     String title;
     String describtion;
     String image;
-    HashMap<String, Room> buttons = new HashMap<>();
+    List<SimpleButton> buttons = new ArrayList<>();
     KeyLevel key = null;
+    ArrayList<Item> items;
 
     public RoomFactory setTitle(String title){
         this.title = title;
@@ -44,8 +44,13 @@ public class RoomFactory {
         return this;
     }
 
-    public RoomFactory addButton(String name, Room room){
-        buttons.put(name, room);
+    public RoomFactory addButton(String name, Room room, ButtonOrientation orientation){
+        buttons.add(new SimpleButton(name, room, orientation));
+        return this;
+    }
+
+    public RoomFactory setItems(Item... items){
+        this.items = new ArrayList<>(Arrays.asList(items));
         return this;
     }
 
@@ -58,40 +63,6 @@ public class RoomFactory {
 
     public GameFrame build(){
         if(key == null){
-            return new GameFrame() {
-                @Override
-                public String getRoomName() {
-                    return title;
-                }
-
-                @Override
-                public String getTitle() {
-                    return title;
-                }
-
-                @Override
-                public String getText() {
-                    return describtion;
-                }
-
-                @Override
-                public String getImgPath() {
-                    return image;
-                }
-
-                @Override
-                public Button[] getButtons() {
-                    List<Button> list = new ArrayList<>();
-                    for (Map.Entry<String, Room> entry : buttons.entrySet()) {
-                        String s = entry.getKey();
-                        Room room = entry.getValue();
-
-                        list.add(new RoomChangeButton(s, this, room, ButtonOrientation.TOP));
-                    }
-                    return (Button[]) list.toArray();
-                }
-            };
-        }else {
             return new GameFrameImpl() {
                 @Override
                 public String getRoomName() {
@@ -115,12 +86,64 @@ public class RoomFactory {
 
                 @Override
                 public Button[] getButtons() {
-                    return (Button[]) buttons.toArray();
+                    return buttons.stream()
+                            .map(button -> new RoomChangeButton(button.getTitle(), this, button.getTarget(), button.getOrientation())).toArray(Button[]::new);
+                }
+
+                ArrayList<Item> items = RoomFactory.this.items;
+
+                @Override
+                public ArrayList<Item> getItems() {
+                    return items;
                 }
 
                 @Override
+                public void removeItem(Item item) {
+                    items.remove(item);
+                }
+            };
+        }else {
+            return new GameFrameImplLockable() {
+                @Override
                 public KeyLevel getKeyLevel() {
                     return key;
+                }
+
+                @Override
+                public String getRoomName() {
+                    return title;
+                }
+
+                @Override
+                public String getTitle() {
+                    return title;
+                }
+
+                @Override
+                public String getText() {
+                    return describtion;
+                }
+
+                @Override
+                public String getImgPath() {
+                    return image;
+                }
+
+                @Override
+                public Button[] getButtons() {
+                    return buttons.stream()
+                            .map(button -> new RoomChangeButton(button.getTitle(), this, button.getTarget(), button.getOrientation())).toArray(Button[]::new);
+                }
+                ArrayList<Item> items = RoomFactory.this.items;
+
+                @Override
+                public ArrayList<Item> getItems() {
+                    return items;
+                }
+
+                @Override
+                public void removeItem(Item item) {
+                    items.remove(item);
                 }
             };
         }

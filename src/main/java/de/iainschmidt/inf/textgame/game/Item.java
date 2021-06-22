@@ -12,8 +12,13 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 public enum Item {
 
-    KEYS_MASTER("Hausmeister Schlüssel", KeyLevel.MASTER, KeyLevel.BIOLOGY, KeyLevel.CHEMISTRY, KeyLevel.PHYSICS, KeyLevel.COMPUTER, KeyLevel.ART),
-    KEY_ART("Kunstlehrer Schlüssel", KeyLevel.ART),
+    KEYS_MASTER("Hausmeister Schlüssel", KeyLevel.MASTER, KeyLevel.BIOLOGY, KeyLevel.CHEMISTRY, KeyLevel.PHYSICS, KeyLevel.COMPUTER, KeyLevel.ART, KeyLevel.NORMAL),
+    KEY_ART("Kunstlehrer Schlüssel", KeyLevel.ART, KeyLevel.NORMAL),
+    KEY_BIO("Biolehrer Schlüssel", KeyLevel.BIOLOGY, KeyLevel.NORMAL),
+    KEY_UNKNOWN("Unbekannter Schlüssel",KeyLevel.COMPUTER, KeyLevel.NORMAL),
+    KEY_INF("Informatiklehrer Schlüssel", KeyLevel.COMPUTER, KeyLevel.NORMAL),
+    KEY_NORMAL("Schlüssel", KeyLevel.NORMAL),
+    FOOD("Brotdose"),
     ;
 
 
@@ -38,5 +43,10 @@ public enum Item {
     }
     public List<KeyLevel> getKeyLevelsList() {
         return Arrays.asList(keyLevels);
+    }
+
+    @Override
+    public String toString() {
+        return getDisplayname();
     }
 }

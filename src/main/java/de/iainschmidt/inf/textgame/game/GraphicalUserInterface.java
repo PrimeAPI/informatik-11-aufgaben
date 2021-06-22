@@ -33,12 +33,9 @@ public class GraphicalUserInterface extends JFrame {
         setSize(800, 800);
         setTitle(TITLE);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        JButton inventory = new JButton("Inventar");
-        inventory.addActionListener(e -> {
-                openInventory();
-        });
-        inventory.setBounds(635, 360, 155, 30);
-        add(inventory);
+        JLabel inv = new JLabel("Dein Inventar:");
+        inv.setBounds(600,400,155,10);
+        add(inv);
         update(frame);
     }
 
@@ -59,27 +56,43 @@ public class GraphicalUserInterface extends JFrame {
         add(title);
         components.add(title);
 
+        JList<String> inventoryList = new JList<>();
+
+        inventoryList.setListData(TextGame.getInstance().getInventory().stream().map(Item::getDisplayname).toArray(String[]::new));
+
+        inventoryList.setLayoutOrientation(JList.VERTICAL);
+        inventoryList.setVisible(true);
+        inventoryList.setVisibleRowCount(-1);
+        inventoryList.setBounds(600, 410, 155, 300);
+        add(inventoryList);
+        components.add(inventoryList);
+
         StringBuilder txt = new StringBuilder(frame.getText());
 
+        JButton map = new JButton("Item nehmen");
+        map.setEnabled(false);
         if(frame instanceof Inventoryable){
-            txt.append("\n\nItems im Raum:\n");
-            for (Item item : ((Inventoryable) frame).getItems()) {
-                txt.append("- 1x " + item.getDisplayname() + "\n");
+            if(((Inventoryable) frame).getItems() != null) {
+                txt.append("\n\nItems im Raum:\n");
+                for (Item item : ((Inventoryable) frame).getItems()) {
+                    txt.append("- 1x " + item.getDisplayname() + "\n");
+                }
+
+                if (((Inventoryable) frame).getItems().size() >= 1) {
+                    map.addActionListener(e -> {
+                        Item item = ((Inventoryable) frame).getItems().get(0);
+                        TextGame.getInstance().getInventory().add(item);
+                        ((Inventoryable) frame).getItems().remove(item);
+                        update(frame);
+                    });
+                    map.setEnabled(true);
+                }
             }
 
-            if(((Inventoryable) frame).getItems().size() >= 1){
-                JButton map = new JButton("Item nehmen");
-                map.addActionListener(e -> {
-                    Item item = ((Inventoryable) frame).getItems().get(0);
-                    TextGame.getInstance().getInventory().add(item);
-                    ((Inventoryable) frame).getItems().remove(item);
-                    update(frame);
-                });
-                map.setBounds(470, 360, 155, 30);
-                add(map);
-                components.add(map);
-            }
         }
+        map.setBounds(600, 360, 155, 30);
+        add(map);
+        components.add(map);
         //Textarea
         JTextArea textArea = new JTextArea(txt.toString());
         textArea.setBounds(10, 30, 450, 350);
@@ -87,6 +100,8 @@ public class GraphicalUserInterface extends JFrame {
         textArea.setBorder(BorderFactory.createCompoundBorder(
                 textArea.getBorder(),
                 BorderFactory.createEmptyBorder(10, 10, 10, 10)));
+        textArea.setLineWrap(true);
+        textArea.setWrapStyleWord(true);
         add(textArea);
         components.add(textArea);
         //IMGAGE
