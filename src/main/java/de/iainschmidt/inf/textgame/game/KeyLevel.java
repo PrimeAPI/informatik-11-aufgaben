@@ -11,6 +11,7 @@ public enum KeyLevel {
     CHEMISTRY,
     PHYSICS,
     COMPUTER,
+    MUSIC,
     ART,
     NORMAL
 }

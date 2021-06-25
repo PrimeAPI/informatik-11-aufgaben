@@ -6,7 +6,6 @@ import de.iainschmidt.inf.textgame.framework.RoomFactory;
 import de.iainschmidt.inf.textgame.game.frames.EscapedScreen;
 import de.iainschmidt.inf.textgame.map.b.ground.Floor;
 
-import java.util.logging.Level;
 
 /**
  * @author Lukas S. PrimeAPI
@@ -50,7 +49,26 @@ public enum Room {
     A_202,
     A_203,
 
+    C_FORYER,
+    C_01,
+    C_02,
+    C_03,
+    C_04,
+    C_05,
+    C_06,
+    C_07,
+    C_STAIRCASE,
+
+    C_102,
+    C_103,
+    C_105,
+    C_106,
+    C_107,
+    C_SAMMLUNG,
+
     HAUPTHOF,
+    B_WIESE,
+    C_WIESE,
 
 
 
@@ -230,6 +248,20 @@ public enum Room {
 
         //A-Gebäude
         {
+            HAUPTHOF.setFrame(
+                    RoomFactory.create(
+                            "Haupthof",
+                            "Du bist auf dem Pausenhof. Von hier kannst du in alle Gebäude gehen",
+                            ""
+                    )
+                    .addButton("A-Gebäude (Foryer)", A_FORYER, ButtonOrientation.LEFT)
+                    .addButton("A-Gebäude (Treppenhaus)", A_STAIRCASE, ButtonOrientation.TOP)
+                    .addButton("B-Gebäude", B_FORYER, ButtonOrientation.RIGHT)
+                    .addButton("C-Gebäude", C_FORYER, ButtonOrientation.BUTTON)
+                    .addButton("B-Wiese", B_WIESE, ButtonOrientation.RIGHT)
+                    .addButton("C-Wiese", C_WIESE, ButtonOrientation.LEFT)
+            );
+
             A_STAIRCASE.setFrame(
                     RoomFactory.create(
                             "A | Treppenhaus",
@@ -370,6 +402,69 @@ public enum Room {
                     .addButton("A203 (Serverraum)", A_203, ButtonOrientation.TOP)
                     .addButton("A201 (Computerraum)", A_201, ButtonOrientation.BUTTON)
                     .setKeyLevel(KeyLevel.COMPUTER)
+            );
+
+            A_203.setFrame(
+                    RoomFactory.create(
+                            "A203 | Serverraum",
+                            "Du bist im Serverraum. Hier stehen die Server für I-Serv. Mach bloß nichts kaputt!",
+                            ""
+                    )
+                    .addButton("Zurücl zu A202", A_202, ButtonOrientation.BUTTON)
+            );
+        }
+
+        //C-GEBÄUDE
+        {
+            C_FORYER.setFrame(
+                    RoomFactory.create(
+                            "C | Foryer",
+                            "Du bist im Foryer des C-Gebäudes. Von hier kannst du in die Bibliothek, in die Musikräume" +
+                                    "und die Treppe hoch gehen",
+                            ""
+                    )
+                    .addButton("C01 | Bibliothek", C_01, ButtonOrientation.LEFT)
+                    .addButton("C02 | Musikraum", C_02, ButtonOrientation.RIGHT)
+                    .addButton("C03 | Musiksammlung", C_03, ButtonOrientation.RIGHT)
+                    .addButton("C04 | Musikraum", C_04, ButtonOrientation.RIGHT)
+                    .addButton("Pausenhof", HAUPTHOF, ButtonOrientation.TOP)
+                            .addButton("C05 | Musikraum", C_05, ButtonOrientation.LEFT)
+                    .addButton("C-Wiese (Pausenhof)", C_WIESE, ButtonOrientation.BUTTON)
+                    .setKeyLevel(KeyLevel.NORMAL)
+            );
+
+            C_01.setFrame(
+                    RoomFactory.create(
+                            "C01 | Bibliothek",
+                            "Du bist in der Bibliothek",
+                            ""
+                    )
+                    .addButton("C-Foryer", C_FORYER, ButtonOrientation.RIGHT)
+                    .addButton("C07", C_07, ButtonOrientation.LEFT)
+                    .setKeyLevel(KeyLevel.NORMAL)
+            );
+
+            C_07.setFrame(
+                    RoomFactory.create(
+                            "C07",
+                            "Du bist in C07",
+                            ""
+                    )
+                    .addButton("C01 | Bibliothek", C_01, ButtonOrientation.RIGHT)
+                    .addButton("Treppenhaus", C_STAIRCASE, ButtonOrientation.BUTTON)
+                    .setKeyLevel(KeyLevel.NORMAL)
+            );
+
+            C_02.setFrame(
+                    RoomFactory.create(
+                            "C02 | Musikraum",
+                            "Du bist im Musikraum. Die letzte Musikklasse die hier war hat hier nicht aufgeräumt." +
+                                    "Die Stühöle stehe hier noch rum.",
+                            ""
+                    )
+                    .addButton("C-Foryer", C_FORYER, ButtonOrientation.LEFT)
+                    .addButton("C03 | Musiksammlung", C_03, ButtonOrientation.BUTTON)
+                    .setKeyLevel(KeyLevel.MUSIC)
             );
         }
     }
