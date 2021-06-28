@@ -466,6 +466,28 @@ public enum Room {
                     .addButton("C03 | Musiksammlung", C_03, ButtonOrientation.BUTTON)
                     .setKeyLevel(KeyLevel.MUSIC)
             );
+
+            C_03.setFrame(
+                    RoomFactory.create(
+                            "C03 | Musiksammlung",
+                            "Du bist in der Musiksammlung. Hier stehen mehrere Intrumente rum.",
+                            ""
+                    )
+                    .addButton("C02 | Musikraum", C_02, ButtonOrientation.TOP)
+                    .addButton("C-Foryer", C_FORYER, ButtonOrientation.LEFT)
+                    .addButton("C04 | Musikraum", C_04, ButtonOrientation.BUTTON)
+                    .setKeyLevel(KeyLevel.MUSIC)
+                    .setItems(Item.GUITARR, Item.KLANGSTAEBE)
+            );
+            C_04.setFrame(
+                    RoomFactory.create(
+                            "C04 | Musikraum",
+                            "Du bist im Musikraum",
+                            ""
+                    )
+                    .addButton("C03 | Musiksammlung", C_03, ButtonOrientation.TOP)
+                    .addButton("C-Foryer", C_FORYER, ButtonOrientation.LEFT)
+            );
         }
     }
 

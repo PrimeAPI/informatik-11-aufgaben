@@ -19,6 +19,8 @@ public enum Item {
     KEY_INF("Informatiklehrer Schlüssel", KeyLevel.COMPUTER, KeyLevel.NORMAL),
     KEY_NORMAL("Schlüssel", KeyLevel.NORMAL),
     FOOD("Brotdose"),
+    GUITARR("Gitarre"),
+    KLANGSTAEBE("Klangstäbe")
     ;
 
 
