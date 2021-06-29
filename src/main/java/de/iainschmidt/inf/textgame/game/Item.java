@@ -13,6 +13,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public enum Item {
 
     KEYS_MASTER("Hausmeister Schlüssel", KeyLevel.MASTER, KeyLevel.BIOLOGY, KeyLevel.CHEMISTRY, KeyLevel.PHYSICS, KeyLevel.COMPUTER, KeyLevel.ART, KeyLevel.NORMAL),
+    KEYS_HEADTEACHER("Schulleitungs Schlüssel", KeyLevel.MASTER, KeyLevel.BIOLOGY, KeyLevel.CHEMISTRY, KeyLevel.PHYSICS, KeyLevel.COMPUTER, KeyLevel.ART, KeyLevel.NORMAL),
     KEY_ART("Kunstlehrer Schlüssel", KeyLevel.ART, KeyLevel.NORMAL),
     KEY_BIO("Biolehrer Schlüssel", KeyLevel.BIOLOGY, KeyLevel.NORMAL),
     KEY_UNKNOWN("Unbekannter Schlüssel",KeyLevel.COMPUTER, KeyLevel.NORMAL),

@@ -7,8 +7,11 @@ import de.iainschmidt.inf.textgame.framework.Inventoryable;
 import de.iainschmidt.inf.textgame.game.frames.InventoryFrame;
 import de.iainschmidt.inf.textgame.utils.RoomChangeAction;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.io.BufferedInputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,8 +26,7 @@ public class GraphicalUserInterface extends JFrame {
 
 
 
-    private GameFrame frame;
-
+    private  GameFrame frame;
     List<Component> components = new ArrayList<>();
 
     public GraphicalUserInterface(GameFrame frame){
@@ -75,7 +77,7 @@ public class GraphicalUserInterface extends JFrame {
             if(((Inventoryable) frame).getItems() != null) {
                 txt.append("\n\nItems im Raum:\n");
                 for (Item item : ((Inventoryable) frame).getItems()) {
-                    txt.append("- 1x " + item.getDisplayname() + "\n");
+                    txt.append("- 1x ").append(item.getDisplayname()).append("\n");
                 }
 
                 if (((Inventoryable) frame).getItems().size() >= 1) {

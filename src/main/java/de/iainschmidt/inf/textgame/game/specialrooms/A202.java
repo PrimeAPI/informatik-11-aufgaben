@@ -1,5 +1,6 @@
 package de.iainschmidt.inf.textgame.game.specialrooms;
 
+import de.iainschmidt.inf.textgame.TextGame;
 import de.iainschmidt.inf.textgame.framework.Button;
 import de.iainschmidt.inf.textgame.framework.ButtonOrientation;
 import de.iainschmidt.inf.textgame.framework.GameFrame;
@@ -40,7 +41,7 @@ public class A202 implements GameFrame, Lockable {
                     "Also ich würde es ja an einem Ort verstecken, der über allem liegt, und kein Schüler je hinkommen sollte";
         }
         if(!input.equals(WLANKEY)){
-            return "Das Passwort ist falsch!\nDu musst nach einem neuen Passwort suchen!";
+            return "Das Passwort ist falsch! \nDu musst nach einem neuen Passwort suchen!";
         }
         return "Du hast das richtige WLAN Passwort gefunden! Du kannst nun folgende E-Mails von Frau Wutschke an die Schulleitung lesen:\n" +
                 "\n" +
@@ -65,7 +66,11 @@ public class A202 implements GameFrame, Lockable {
                 new RoomChangeButton("Zurück zum Flur", this, Room.A_200, ButtonOrientation.RIGHT),
                 new RoomChangeButton("A203 (Serverraum)", this, Room.A_203, ButtonOrientation.TOP),
                 new RoomChangeButton("A201 (Computerraum)", this, Room.A_201, ButtonOrientation.BUTTON),
-                new Button("WLAN Passwort eingeben", this::openWLAN, ButtonOrientation.SPECIAL)
+                new Button("WLAN Passwort eingeben", this::openWLAN, ButtonOrientation.SPECIAL),
+                new Button("Hilfe", () -> {
+                    TextGame.getInstance().addTippCount();
+                    JOptionPane.showMessageDialog(TextGame.getInstance().getGui(), "Das Passwort findest du auf dem Dachboden!", "Hilfestellung", JOptionPane.INFORMATION_MESSAGE);
+                }, ButtonOrientation.SPECIAL)
         };
     }
 

@@ -5,6 +5,7 @@ import de.iainschmidt.inf.textgame.framework.GameFrame;
 import de.iainschmidt.inf.textgame.framework.RoomFactory;
 import de.iainschmidt.inf.textgame.game.frames.EscapedScreen;
 import de.iainschmidt.inf.textgame.game.specialrooms.A202;
+import de.iainschmidt.inf.textgame.game.specialrooms.ABouroEntry;
 import de.iainschmidt.inf.textgame.map.b.ground.Floor;
 
 
@@ -72,6 +73,10 @@ public enum Room {
     HAUPTHOF,
     B_WIESE,
     C_WIESE,
+
+
+    A_BOURO,
+    A_BOURO_ENTRY,
 
 
 
@@ -336,6 +341,7 @@ public enum Room {
                             "Du bist nun im ersten Stock!",
                             ""
                     )
+                            .addButton("Büro betreten", A_BOURO_ENTRY, ButtonOrientation.LEFT)
                             .addButton("Treppe hoch gehen", A_200, ButtonOrientation.TOP)
                     .addButton("A112 (Klassenraum)", A_112, ButtonOrientation.LEFT)
                     .addButton("A113 (Klassenraum)", A_113, ButtonOrientation.TOP)
@@ -431,6 +437,21 @@ public enum Room {
                     )
                     .addButton("Dachboden verlassen", A_200, ButtonOrientation.BUTTON)
             );
+
+            A_BOURO.setFrame(
+                    RoomFactory.create(
+                            "Büro",
+                            "Du bist nun im Büro! Hier liegt der Schlüssel der Schulleitung, mit dem du die Schule verlassen kannst!\n",
+                            ""
+                    )
+                    .addButton("Büro verlassen", A_UPSTAIRS, ButtonOrientation.RIGHT)
+                    .setItems(Item.KEYS_HEADTEACHER)
+            );
+
+            A_BOURO_ENTRY.setFrame(
+                    new ABouroEntry()
+            );
+
         }
 
         //C-GEBÄUDE
