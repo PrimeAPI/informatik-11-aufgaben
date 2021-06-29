@@ -5,13 +5,9 @@ import de.iainschmidt.inf.textgame.framework.Button;
 import de.iainschmidt.inf.textgame.framework.GameFrame;
 import de.iainschmidt.inf.textgame.framework.Inventoryable;
 import de.iainschmidt.inf.textgame.game.frames.InventoryFrame;
-import de.iainschmidt.inf.textgame.utils.RoomChangeAction;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.io.BufferedInputStream;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,32 +19,29 @@ import java.util.List;
 public class GraphicalUserInterface extends JFrame {
 
     private static final String TITLE = "Escape the Maxe";
-
-
-
-    private  GameFrame frame;
     List<Component> components = new ArrayList<>();
+    private GameFrame frame;
 
-    public GraphicalUserInterface(GameFrame frame){
+    public GraphicalUserInterface(GameFrame frame) {
         setLayout(null);
         setVisible(true);
         setSize(800, 800);
         setTitle(TITLE);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         JLabel inv = new JLabel("Dein Inventar:");
-        inv.setBounds(600,400,155,10);
+        inv.setBounds(600, 400, 155, 10);
         add(inv);
         update(frame);
     }
 
-    private void clear(){
+    private void clear() {
         for (Component component : components) {
             remove(component);
         }
         components.clear();
     }
 
-    public void update(GameFrame frame){
+    public void update(GameFrame frame) {
         this.frame = frame;
         clear();
 
@@ -73,8 +66,8 @@ public class GraphicalUserInterface extends JFrame {
 
         JButton map = new JButton("Item nehmen");
         map.setEnabled(false);
-        if(frame instanceof Inventoryable){
-            if(((Inventoryable) frame).getItems() != null) {
+        if (frame instanceof Inventoryable) {
+            if (((Inventoryable) frame).getItems() != null) {
                 txt.append("\n\nItems im Raum:\n");
                 for (Item item : ((Inventoryable) frame).getItems()) {
                     txt.append("- 1x ").append(item.getDisplayname()).append("\n");
@@ -110,11 +103,10 @@ public class GraphicalUserInterface extends JFrame {
         ImageIcon imageIcon = new ImageIcon(frame.getImgPath());
         JLabel image = new JLabel();
         image.setIcon(imageIcon);
-        image.setBounds(470, 30, 320 , 320);
+        image.setBounds(470, 30, 320, 320);
         image.setVerticalAlignment(SwingConstants.TOP);
         add(image);
         components.add(image);
-
 
 
         int left = 500;
@@ -124,8 +116,8 @@ public class GraphicalUserInterface extends JFrame {
         int special = 400;
 
         for (Button button : frame.getButtons()) {
-            switch (button.getOrientation()){
-                case SPECIAL:{
+            switch (button.getOrientation()) {
+                case SPECIAL: {
                     JButton jButton = new JButton(button.getText());
                     jButton.setBounds(430, special, 150, 30);
                     add(jButton);
@@ -134,7 +126,7 @@ public class GraphicalUserInterface extends JFrame {
                     special += 40;
                     break;
                 }
-                case TOP:  {
+                case TOP: {
                     JButton jButton = new JButton(button.getText());
                     jButton.setBounds(170, top, 250, 30);
                     add(jButton);
@@ -143,7 +135,7 @@ public class GraphicalUserInterface extends JFrame {
                     top += 40;
                     break;
                 }
-                case BUTTON:  {
+                case BUTTON: {
                     JButton jButton = new JButton(button.getText());
                     jButton.setBounds(170, bottom, 250, 30);
                     add(jButton);
@@ -152,7 +144,7 @@ public class GraphicalUserInterface extends JFrame {
                     bottom += 40;
                     break;
                 }
-                case LEFT:  {
+                case LEFT: {
                     JButton jButton = new JButton(button.getText());
                     jButton.setBounds(10, left, 150, 30);
                     add(jButton);
@@ -161,7 +153,7 @@ public class GraphicalUserInterface extends JFrame {
                     left += 40;
                     break;
                 }
-                case RIGHT:  {
+                case RIGHT: {
                     JButton jButton = new JButton(button.getText());
                     jButton.setBounds(430, right, 150, 30);
                     add(jButton);
@@ -177,10 +169,10 @@ public class GraphicalUserInterface extends JFrame {
         repaint();
     }
 
-    public void openInventory(){
-        if(frame instanceof InventoryFrame){
+    public void openInventory() {
+        if (frame instanceof InventoryFrame) {
             update(((InventoryFrame) frame).prev);
-        }else {
+        } else {
             update(new InventoryFrame(this.frame));
         }
     }

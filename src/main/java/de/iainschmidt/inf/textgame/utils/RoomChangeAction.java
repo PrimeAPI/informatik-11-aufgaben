@@ -39,22 +39,22 @@ public class RoomChangeAction implements ButtonAction {
 
     @Override
     public void onClick() {
-        if(to == null){
+        if (to == null) {
             to = room.getFrame();
         }
-        if(to instanceof Lockable){
+        if (to instanceof Lockable) {
             System.out.println("is lockable");
             Lockable lockable = (Lockable) to;
             boolean pass = false;
             for (Item item : TextGame.getInstance().getInventory()) {
                 System.out.println(item.getDisplayname());
-                if(item.getKeyLevelsList().contains(lockable.getKeyLevel())){
+                if (item.getKeyLevelsList().contains(lockable.getKeyLevel())) {
                     System.out.println("yes");
                     pass = true;
                 }
             }
             System.out.println("pass = " + pass);
-            if(!pass && !ignoreKey){
+            if (!pass && !ignoreKey) {
                 TextGame.getInstance().getGui().update(new ErrorScreen("Du hast keinen Schlüssel für diesen Raum!", from));
                 return;
             }

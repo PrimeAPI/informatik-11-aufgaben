@@ -79,11 +79,7 @@ public enum Room {
     A_BOURO_ENTRY,
 
 
-
-
-
-    ESCAPED(new EscapedScreen())
-    ;
+    ESCAPED(new EscapedScreen());
 
 
     static {
@@ -203,8 +199,8 @@ public enum Room {
                                     "",
                             ""
                     )
-                    .addButton("Raum verlassen", B_UPSTAIRS, ButtonOrientation.BUTTON)
-                    .setItems(Item.KEY_INF)
+                            .addButton("Raum verlassen", B_UPSTAIRS, ButtonOrientation.BUTTON)
+                            .setItems(Item.KEY_INF)
             );
             B_103.setFrame(
                     RoomFactory.create(
@@ -213,7 +209,7 @@ public enum Room {
                                     "",
                             ""
                     )
-                    .addButton("Raum verlassen", B_UPSTAIRS, ButtonOrientation.BUTTON)
+                            .addButton("Raum verlassen", B_UPSTAIRS, ButtonOrientation.BUTTON)
             );
 
             B_101.setFrame(
@@ -260,9 +256,9 @@ public enum Room {
                             "Du bist nun hinter dem B-Gebäude",
                             ""
                     )
-                    .addButton("Haupthof", HAUPTHOF, ButtonOrientation.TOP)
-                    .addButton("C-Wiese", C_WIESE, ButtonOrientation.LEFT)
-                    .addButton("Schulgelände verlassen", ESCAPED, ButtonOrientation.RIGHT)
+                            .addButton("Haupthof", HAUPTHOF, ButtonOrientation.TOP)
+                            .addButton("C-Wiese", C_WIESE, ButtonOrientation.LEFT)
+                            .addButton("Schulgelände verlassen", ESCAPED, ButtonOrientation.RIGHT)
             );
         }
 
@@ -274,12 +270,12 @@ public enum Room {
                             "Du bist auf dem Pausenhof. Von hier kannst du in alle Gebäude gehen",
                             ""
                     )
-                    .addButton("A-Gebäude (Foryer)", A_FORYER, ButtonOrientation.LEFT)
-                    .addButton("A-Gebäude (Treppenhaus)", A_STAIRCASE, ButtonOrientation.TOP)
-                    .addButton("B-Gebäude", B_FORYER, ButtonOrientation.RIGHT)
-                    .addButton("C-Gebäude", C_FORYER, ButtonOrientation.BUTTON)
-                    .addButton("B-Wiese", B_WIESE, ButtonOrientation.RIGHT)
-                    .addButton("C-Wiese", C_WIESE, ButtonOrientation.LEFT)
+                            .addButton("A-Gebäude (Foryer)", A_FORYER, ButtonOrientation.LEFT)
+                            .addButton("A-Gebäude (Treppenhaus)", A_STAIRCASE, ButtonOrientation.TOP)
+                            .addButton("B-Gebäude", B_FORYER, ButtonOrientation.RIGHT)
+                            .addButton("C-Gebäude", C_FORYER, ButtonOrientation.BUTTON)
+                            .addButton("B-Wiese", B_WIESE, ButtonOrientation.RIGHT)
+                            .addButton("C-Wiese", C_WIESE, ButtonOrientation.LEFT)
             );
 
             A_STAIRCASE.setFrame(
@@ -294,7 +290,7 @@ public enum Room {
                             .addButton("A-Foryer", A_FORYER, ButtonOrientation.LEFT)
                             .addButton("B-Gebäude", Room.B_FORYER, ButtonOrientation.RIGHT)
                             .addButton("Treppe hoch gehen", A_UPSTAIRS, ButtonOrientation.TOP)
-                    .addButton("Cafeteria", A_CAFETERIA, ButtonOrientation.TOP)
+                            .addButton("Cafeteria", A_CAFETERIA, ButtonOrientation.TOP)
             );
 
             A_FORYER.setFrame(
@@ -304,10 +300,10 @@ public enum Room {
                                     "Wann Frau Wutschke am Montag wohl wieder zur Schule kommt...",
                             ""
                     )
-                    .addButton("Treppe hoch gehen", A_UPSTAIRS, ButtonOrientation.TOP)
-                    .addButton("Schule verlassen", ESCAPED, ButtonOrientation.TOP)
-                    .addButton("Flur betreten", A_STAIRCASE, ButtonOrientation.RIGHT)
-                    .addButton("Pausenhof betreten", HAUPTHOF, ButtonOrientation.BUTTON)
+                            .addButton("Treppe hoch gehen", A_UPSTAIRS, ButtonOrientation.TOP)
+                            .addButton("Schule verlassen", ESCAPED, ButtonOrientation.TOP)
+                            .addButton("Flur betreten", A_STAIRCASE, ButtonOrientation.RIGHT)
+                            .addButton("Pausenhof betreten", HAUPTHOF, ButtonOrientation.BUTTON)
             );
             A_07.setFrame(
                     RoomFactory.create(
@@ -315,7 +311,7 @@ public enum Room {
                             "Du bist im Klassenraum der 7a",
                             ""
                     )
-                    .addButton("Raum verlassen", A_STAIRCASE, ButtonOrientation.BUTTON)
+                            .addButton("Raum verlassen", A_STAIRCASE, ButtonOrientation.BUTTON)
             );
             A_08.setFrame(
                     RoomFactory.create(
@@ -323,7 +319,7 @@ public enum Room {
                             "Du bist im Klassenraum der 7d",
                             ""
                     )
-                    .addButton("Raum verlassen", A_STAIRCASE, ButtonOrientation.BUTTON)
+                            .addButton("Raum verlassen", A_STAIRCASE, ButtonOrientation.BUTTON)
             );
             A_CAFETERIA.setFrame(
                     RoomFactory.create(
@@ -331,8 +327,8 @@ public enum Room {
                             "Du bist in der Cafeteria. Hier hat jemand eine Brotdose vergessen. Du siehst auch einen Schlüssel, den du nicht zuordnen kannst.",
                             ""
                     )
-                    .setItems(Item.FOOD, Item.KEY_UNKNOWN)
-                    .addButton("Cafeteria verlassen", A_STAIRCASE, ButtonOrientation.BUTTON)
+                            .setItems(Item.FOOD, Item.KEY_UNKNOWN)
+                            .addButton("Cafeteria verlassen", A_STAIRCASE, ButtonOrientation.BUTTON)
             );
 
             A_UPSTAIRS.setFrame(
@@ -343,8 +339,8 @@ public enum Room {
                     )
                             .addButton("Büro betreten", A_BOURO_ENTRY, ButtonOrientation.LEFT)
                             .addButton("Treppe hoch gehen", A_200, ButtonOrientation.TOP)
-                    .addButton("A112 (Klassenraum)", A_112, ButtonOrientation.LEFT)
-                    .addButton("A113 (Klassenraum)", A_113, ButtonOrientation.TOP)
+                            .addButton("A112 (Klassenraum)", A_112, ButtonOrientation.LEFT)
+                            .addButton("A113 (Klassenraum)", A_113, ButtonOrientation.TOP)
                             .addButton("A120 (Sammlung)", A_120, ButtonOrientation.TOP)
                             .addButton("A121 (Klassenraum)", A_121, ButtonOrientation.RIGHT)
                             .addButton("Treppe runter (Treppenhaus)", A_STAIRCASE, ButtonOrientation.RIGHT)
@@ -357,7 +353,7 @@ public enum Room {
                             "Du bist im Klassenraum der 8a",
                             ""
                     )
-                    .addButton("Raum verlassen", A_UPSTAIRS, ButtonOrientation.BUTTON)
+                            .addButton("Raum verlassen", A_UPSTAIRS, ButtonOrientation.BUTTON)
             );
 
             A_112.setFrame(
@@ -366,7 +362,7 @@ public enum Room {
                             "Du bist im Klassenraum der 11b",
                             ""
                     )
-                    .addButton("Raum verlassen", A_UPSTAIRS, ButtonOrientation.BUTTON)
+                            .addButton("Raum verlassen", A_UPSTAIRS, ButtonOrientation.BUTTON)
             );
 
             A_113.setFrame(
@@ -375,7 +371,7 @@ public enum Room {
                             "Du bist im Klassenraum der 10e",
                             ""
                     )
-                    .addButton("Raum verlassen", A_UPSTAIRS, ButtonOrientation.BUTTON)
+                            .addButton("Raum verlassen", A_UPSTAIRS, ButtonOrientation.BUTTON)
             );
 
             A_120.setFrame(
@@ -385,7 +381,7 @@ public enum Room {
                             ""
                     )
                             .setKeyLevel(KeyLevel.NORMAL)
-                    .addButton("Raum verlassen", A_UPSTAIRS, ButtonOrientation.BUTTON)
+                            .addButton("Raum verlassen", A_UPSTAIRS, ButtonOrientation.BUTTON)
             );
 
 
@@ -397,10 +393,10 @@ public enum Room {
                                     "Du kannst lesen, dass Herr Karasch zuletzt in B102 mit der 7d Unterricht hatte.",
                             ""
                     )
-                    .addButton("Treppe runter gehen", A_UPSTAIRS, ButtonOrientation.BUTTON)
-                    .addButton("A202 (Computerraum)", A_202, ButtonOrientation.LEFT)
-                    .addButton("A201 (Computerraum)", A_201, ButtonOrientation.LEFT)
-                    .addButton("Dachboden", A_ATTIC, ButtonOrientation.TOP)
+                            .addButton("Treppe runter gehen", A_UPSTAIRS, ButtonOrientation.BUTTON)
+                            .addButton("A202 (Computerraum)", A_202, ButtonOrientation.LEFT)
+                            .addButton("A201 (Computerraum)", A_201, ButtonOrientation.LEFT)
+                            .addButton("Dachboden", A_ATTIC, ButtonOrientation.TOP)
             );
 
             A_201.setFrame(
@@ -409,9 +405,9 @@ public enum Room {
                             "Hier sind alle Computer aus. Hier ist nichts Spannendes",
                             ""
                     )
-                    .addButton("Zurück zum Flur", A_200, ButtonOrientation.RIGHT)
-                    .addButton("A202 (Computerraum)", A_202, ButtonOrientation.TOP)
-                    .setKeyLevel(KeyLevel.COMPUTER)
+                            .addButton("Zurück zum Flur", A_200, ButtonOrientation.RIGHT)
+                            .addButton("A202 (Computerraum)", A_202, ButtonOrientation.TOP)
+                            .setKeyLevel(KeyLevel.COMPUTER)
             );
 
             A_202.setFrame(
@@ -424,7 +420,7 @@ public enum Room {
                             "Du bist im Serverraum. Hier stehen die Server für I-Serv. Mach bloß nichts kaputt!",
                             ""
                     )
-                    .addButton("Zurück zu A202", A_202, ButtonOrientation.BUTTON)
+                            .addButton("Zurück zu A202", A_202, ButtonOrientation.BUTTON)
             );
 
             A_ATTIC.setFrame(
@@ -435,7 +431,7 @@ public enum Room {
                                     "An einer Wand steht ein WLAN Router. Auf der Rückseite davon stehen das Passwort '" + A202.WLANKEY + "'.",
                             ""
                     )
-                    .addButton("Dachboden verlassen", A_200, ButtonOrientation.BUTTON)
+                            .addButton("Dachboden verlassen", A_200, ButtonOrientation.BUTTON)
             );
 
             A_BOURO.setFrame(
@@ -444,8 +440,8 @@ public enum Room {
                             "Du bist nun im Büro! Hier liegt der Schlüssel der Schulleitung, mit dem du die Schule verlassen kannst!\n",
                             ""
                     )
-                    .addButton("Büro verlassen", A_UPSTAIRS, ButtonOrientation.RIGHT)
-                    .setItems(Item.KEYS_HEADTEACHER)
+                            .addButton("Büro verlassen", A_UPSTAIRS, ButtonOrientation.RIGHT)
+                            .setItems(Item.KEYS_HEADTEACHER)
             );
 
             A_BOURO_ENTRY.setFrame(
@@ -463,15 +459,15 @@ public enum Room {
                                     "und die Treppe hoch gehen",
                             ""
                     )
-                    .addButton("C01 | Bibliothek", C_01, ButtonOrientation.LEFT)
-                    .addButton("C02 | Musikraum", C_02, ButtonOrientation.RIGHT)
-                    .addButton("C03 | Musiksammlung", C_03, ButtonOrientation.RIGHT)
-                    .addButton("C04 | Musikraum", C_04, ButtonOrientation.RIGHT)
-                    .addButton("Pausenhof", HAUPTHOF, ButtonOrientation.TOP)
+                            .addButton("C01 | Bibliothek", C_01, ButtonOrientation.LEFT)
+                            .addButton("C02 | Musikraum", C_02, ButtonOrientation.RIGHT)
+                            .addButton("C03 | Musiksammlung", C_03, ButtonOrientation.RIGHT)
+                            .addButton("C04 | Musikraum", C_04, ButtonOrientation.RIGHT)
+                            .addButton("Pausenhof", HAUPTHOF, ButtonOrientation.TOP)
                             .addButton("Treppe hoch gehen [1. OG]", C_UPSTAIRS, ButtonOrientation.TOP)
                             .addButton("C05 | Musikraum", C_05, ButtonOrientation.LEFT)
-                    .addButton("C-Wiese (Pausenhof)", C_WIESE, ButtonOrientation.BUTTON)
-                    .setKeyLevel(KeyLevel.NORMAL)
+                            .addButton("C-Wiese (Pausenhof)", C_WIESE, ButtonOrientation.BUTTON)
+                            .setKeyLevel(KeyLevel.NORMAL)
             );
 
             C_01.setFrame(
@@ -480,9 +476,9 @@ public enum Room {
                             "Du bist in der Bibliothek",
                             ""
                     )
-                    .addButton("C-Foryer", C_FORYER, ButtonOrientation.RIGHT)
-                    .addButton("C07", C_07, ButtonOrientation.LEFT)
-                    .setKeyLevel(KeyLevel.NORMAL)
+                            .addButton("C-Foryer", C_FORYER, ButtonOrientation.RIGHT)
+                            .addButton("C07", C_07, ButtonOrientation.LEFT)
+                            .setKeyLevel(KeyLevel.NORMAL)
             );
 
             C_07.setFrame(
@@ -491,9 +487,9 @@ public enum Room {
                             "Du bist in C07",
                             ""
                     )
-                    .addButton("C01 | Bibliothek", C_01, ButtonOrientation.RIGHT)
-                    .addButton("Treppenhaus", C_STAIRCASE, ButtonOrientation.BUTTON)
-                    .setKeyLevel(KeyLevel.NORMAL)
+                            .addButton("C01 | Bibliothek", C_01, ButtonOrientation.RIGHT)
+                            .addButton("Treppenhaus", C_STAIRCASE, ButtonOrientation.BUTTON)
+                            .setKeyLevel(KeyLevel.NORMAL)
             );
 
             C_02.setFrame(
@@ -503,9 +499,9 @@ public enum Room {
                                     "Die Stühöle stehe hier noch rum.",
                             ""
                     )
-                    .addButton("C-Foryer", C_FORYER, ButtonOrientation.LEFT)
-                    .addButton("C03 | Musiksammlung", C_03, ButtonOrientation.BUTTON)
-                    .setKeyLevel(KeyLevel.MUSIC)
+                            .addButton("C-Foryer", C_FORYER, ButtonOrientation.LEFT)
+                            .addButton("C03 | Musiksammlung", C_03, ButtonOrientation.BUTTON)
+                            .setKeyLevel(KeyLevel.MUSIC)
             );
 
             C_03.setFrame(
@@ -514,11 +510,11 @@ public enum Room {
                             "Du bist in der Musiksammlung. Hier stehen mehrere Intrumente rum.",
                             ""
                     )
-                    .addButton("C02 | Musikraum", C_02, ButtonOrientation.TOP)
-                    .addButton("C-Foryer", C_FORYER, ButtonOrientation.LEFT)
-                    .addButton("C04 | Musikraum", C_04, ButtonOrientation.BUTTON)
-                    .setKeyLevel(KeyLevel.MUSIC)
-                    .setItems(Item.GUITARR, Item.KLANGSTAEBE)
+                            .addButton("C02 | Musikraum", C_02, ButtonOrientation.TOP)
+                            .addButton("C-Foryer", C_FORYER, ButtonOrientation.LEFT)
+                            .addButton("C04 | Musikraum", C_04, ButtonOrientation.BUTTON)
+                            .setKeyLevel(KeyLevel.MUSIC)
+                            .setItems(Item.GUITARR, Item.KLANGSTAEBE)
             );
             C_04.setFrame(
                     RoomFactory.create(
@@ -526,9 +522,9 @@ public enum Room {
                             "Du bist im Musikraum",
                             ""
                     )
-                    .addButton("C03 | Musiksammlung", C_03, ButtonOrientation.TOP)
-                    .addButton("C-Foryer", C_FORYER, ButtonOrientation.LEFT)
-                    .setItems(Item.KEY_MUSIC)
+                            .addButton("C03 | Musiksammlung", C_03, ButtonOrientation.TOP)
+                            .addButton("C-Foryer", C_FORYER, ButtonOrientation.LEFT)
+                            .setItems(Item.KEY_MUSIC)
             );
             C_05.setFrame(
                     RoomFactory.create(
@@ -536,8 +532,8 @@ public enum Room {
                             "Du bist im Musikraum",
                             ""
                     )
-                    .addButton("C06 | Sammlung", C_06, ButtonOrientation.LEFT)
-                    .addButton("C-Foryer", C_FORYER, ButtonOrientation.RIGHT)
+                            .addButton("C06 | Sammlung", C_06, ButtonOrientation.LEFT)
+                            .addButton("C-Foryer", C_FORYER, ButtonOrientation.RIGHT)
                             .setKeyLevel(KeyLevel.MUSIC)
             );
             C_06.setFrame(
@@ -546,8 +542,8 @@ public enum Room {
                             "Du bist in der Sammlung",//TODO
                             ""
                     )
-                    .addButton("Treppenhaus", C_STAIRCASE, ButtonOrientation.LEFT)
-                    .addButton("C05 | MUsikraum", C_05, ButtonOrientation.RIGHT)
+                            .addButton("Treppenhaus", C_STAIRCASE, ButtonOrientation.LEFT)
+                            .addButton("C05 | MUsikraum", C_05, ButtonOrientation.RIGHT)
                             .setKeyLevel(KeyLevel.MUSIC)
             );
 
@@ -558,11 +554,10 @@ public enum Room {
                                     "reinregnet.",
                             ""
                     )
-                    .addButton("C07", C_07, ButtonOrientation.TOP)
-                    .addButton("C06 | Sammlung", C_06, ButtonOrientation.RIGHT)
-                    .addButton("Gebäude verlassen [C-Wiese]", C_WIESE, ButtonOrientation.LEFT)
+                            .addButton("C07", C_07, ButtonOrientation.TOP)
+                            .addButton("C06 | Sammlung", C_06, ButtonOrientation.RIGHT)
+                            .addButton("Gebäude verlassen [C-Wiese]", C_WIESE, ButtonOrientation.LEFT)
             );
-
 
 
             C_WIESE.setFrame(
@@ -573,9 +568,9 @@ public enum Room {
                     )
                             .addButton("C-Gebäude betreten [Foryer]", C_FORYER, ButtonOrientation.RIGHT)
                             .addButton("C-Gebäude betreten [Treppenhaus)", C_STAIRCASE, ButtonOrientation.LEFT)
-                    .addButton("B-Wiese", B_WIESE, ButtonOrientation.RIGHT)
-                    .addButton("Haupthof", HAUPTHOF, ButtonOrientation.TOP)
-                    .addButton("Schulgelände verlassen", ESCAPED, ButtonOrientation.LEFT)
+                            .addButton("B-Wiese", B_WIESE, ButtonOrientation.RIGHT)
+                            .addButton("Haupthof", HAUPTHOF, ButtonOrientation.TOP)
+                            .addButton("Schulgelände verlassen", ESCAPED, ButtonOrientation.LEFT)
             );
 
 

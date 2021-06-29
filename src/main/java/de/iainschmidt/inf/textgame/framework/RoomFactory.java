@@ -5,15 +5,11 @@ import de.iainschmidt.inf.textgame.game.KeyLevel;
 import de.iainschmidt.inf.textgame.game.Room;
 import de.iainschmidt.inf.textgame.utils.RoomChangeButton;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class RoomFactory {
-
-
-    public static RoomFactory create(String title, String desc, String image){
-        return new RoomFactory().setTitle(title).setDesc(desc).setImage(image);
-    }
 
 
     String title;
@@ -23,47 +19,47 @@ public class RoomFactory {
     KeyLevel key = null;
     ArrayList<Item> items;
 
-    public RoomFactory setTitle(String title){
+    public static RoomFactory create(String title, String desc, String image) {
+        return new RoomFactory().setTitle(title).setDesc(desc).setImage(image);
+    }
+
+    public RoomFactory setTitle(String title) {
         this.title = title;
         return this;
     }
 
-    public RoomFactory setDesc(String desc){
+    public RoomFactory setDesc(String desc) {
         this.describtion = desc;
         return this;
     }
 
-    public RoomFactory setImage(String image){
+    public RoomFactory setImage(String image) {
         this.image = image;
         return this;
     }
 
 
-    public RoomFactory setKeyLevel(KeyLevel level){
+    public RoomFactory setKeyLevel(KeyLevel level) {
         this.key = level;
         return this;
     }
 
-    public RoomFactory addButton(String name, Room room, ButtonOrientation orientation){
+    public RoomFactory addButton(String name, Room room, ButtonOrientation orientation) {
         buttons.add(new SimpleButton(name, room, orientation));
         return this;
     }
 
-    public RoomFactory setItems(Item... items){
+    public RoomFactory setItems(Item... items) {
         this.items = new ArrayList<>(Arrays.asList(items));
         return this;
     }
 
 
-
-
-
-
-
-
-    public GameFrame build(){
-        if(key == null){
+    public GameFrame build() {
+        if (key == null) {
             return new GameFrameImpl() {
+                final ArrayList<Item> items = RoomFactory.this.items;
+
                 @Override
                 public String getRoomName() {
                     return title;
@@ -90,8 +86,6 @@ public class RoomFactory {
                             .map(button -> new RoomChangeButton(button.getTitle(), this, button.getTarget(), button.getOrientation())).toArray(Button[]::new);
                 }
 
-                ArrayList<Item> items = RoomFactory.this.items;
-
                 @Override
                 public ArrayList<Item> getItems() {
                     return items;
@@ -102,8 +96,10 @@ public class RoomFactory {
                     items.remove(item);
                 }
             };
-        }else {
+        } else {
             return new GameFrameImplLockable() {
+                final ArrayList<Item> items = RoomFactory.this.items;
+
                 @Override
                 public KeyLevel getKeyLevel() {
                     return key;
@@ -134,7 +130,6 @@ public class RoomFactory {
                     return buttons.stream()
                             .map(button -> new RoomChangeButton(button.getTitle(), this, button.getTarget(), button.getOrientation())).toArray(Button[]::new);
                 }
-                ArrayList<Item> items = RoomFactory.this.items;
 
                 @Override
                 public ArrayList<Item> getItems() {

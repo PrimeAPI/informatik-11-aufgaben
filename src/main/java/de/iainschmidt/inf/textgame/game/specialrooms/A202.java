@@ -34,13 +34,13 @@ public class A202 implements GameFrame, Lockable {
 
     @Override
     public String getText() {
-        if(input == null){
+        if (input == null) {
             return "Du bist im Informatikraum! Der Lehrer PC ist eingeschaltet. " +
                     "\nDu kannst sehen, dass die letzte Lehrer noch angemeldet ist. Das WLAN ist aber deaktiviert!" +
                     "Du musst irgendwo das WLAN passwort finden!\n\n" +
                     "Also ich würde es ja an einem Ort verstecken, der über allem liegt, und kein Schüler je hinkommen sollte";
         }
-        if(!input.equals(WLANKEY)){
+        if (!input.equals(WLANKEY)) {
             return "Das Passwort ist falsch! \nDu musst nach einem neuen Passwort suchen!";
         }
         return "Du hast das richtige WLAN Passwort gefunden! Du kannst nun folgende E-Mails von Frau Wutschke an die Schulleitung lesen:\n" +
@@ -51,10 +51,10 @@ public class A202 implements GameFrame, Lockable {
 
     @Override
     public String getImgPath() {
-        if(input == null){
+        if (input == null) {
             return "img/A202_login.png";
         }
-        if(!input.equals(WLANKEY)){
+        if (!input.equals(WLANKEY)) {
             return "img/A202_wrong.png";
         }
         return "img/A202_inbox.png";
@@ -80,7 +80,7 @@ public class A202 implements GameFrame, Lockable {
     }
 
 
-    private void openWLAN(){
+    private void openWLAN() {
         input = JOptionPane.showInputDialog("Wie ist das WLAN Passwort?", null);
         new RoomChangeAction(this, this).onClick();
     }

@@ -5,8 +5,6 @@ import de.iainschmidt.inf.textgame.framework.ButtonOrientation;
 import de.iainschmidt.inf.textgame.framework.GameFrame;
 import de.iainschmidt.inf.textgame.utils.RoomChangeAction;
 
-import java.awt.*;
-
 /**
  * @author Lukas S. PrimeAPI
  * created on 17.06.2021

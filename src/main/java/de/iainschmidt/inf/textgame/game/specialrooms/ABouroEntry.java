@@ -7,7 +7,6 @@ import de.iainschmidt.inf.textgame.framework.GameFrame;
 import de.iainschmidt.inf.textgame.game.Room;
 import de.iainschmidt.inf.textgame.utils.RoomChangeAction;
 import de.iainschmidt.inf.textgame.utils.RoomChangeButton;
-import org.w3c.dom.Text;
 
 import javax.swing.*;
 
@@ -36,12 +35,12 @@ public class ABouroEntry implements GameFrame {
 
     @Override
     public String getText() {
-        if(input == null){
+        if (input == null) {
             return "Das Büro ist mit einer Pin gesichert! Irgendwo muss die Pin doch stehen.\n\n\n" +
                     "Falls du Hilfe brauchst gibt es eine Hilfestellung!";
         }
 
-        if(passcode.equals(input)){
+        if (passcode.equals(input)) {
             new RoomChangeAction(this, Room.A_BOURO.getFrame()).onClick();
             return "Leite weiter...";
         }
@@ -65,16 +64,17 @@ public class ABouroEntry implements GameFrame {
         };
     }
 
-    public void openInput(){
+    public void openInput() {
         try {
             input = Integer.valueOf(JOptionPane.showInputDialog("Gib die vierstellige PIN ein!"));
-        }catch(Exception ex) {
+        } catch (Exception ex) {
             JOptionPane.showMessageDialog(TextGame.getInstance().getGui(), "Dein Code darf ausschließlich aus Zahlen bestehen!", "Ungültige Eingabe", JOptionPane.ERROR_MESSAGE);
         }
         new RoomChangeAction(this, this).onClick();
     }
-    private void checkPass(){
-        if(passcode.equals(input)){
+
+    private void checkPass() {
+        if (passcode.equals(input)) {
             new RoomChangeAction(this, Room.A_BOURO.getFrame()).onClick();
         }
     }

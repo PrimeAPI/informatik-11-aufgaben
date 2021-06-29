@@ -37,7 +37,7 @@ public class Floor implements GameFrame {
         return new Button[]{
                 new RoomChangeButton("B02", this, Room.B_02.getFrame(), ButtonOrientation.LEFT),
                 new RoomChangeButton("Foryer", this, Room.B_FORYER.getFrame(), ButtonOrientation.LEFT),
-                new RoomChangeButton("B03", this, Room. B_03, ButtonOrientation.TOP),
+                new RoomChangeButton("B03", this, Room.B_03, ButtonOrientation.TOP),
                 new RoomChangeButton("B05", this, Room.B_05, ButtonOrientation.RIGHT),
                 new RoomChangeButton("B08 (Kustsammlung)", this, Room.B_08_SAMMLUNG.getFrame(), ButtonOrientation.LEFT),
                 new RoomChangeButton("B07 (Kustsammlung)", this, Room.B_07, ButtonOrientation.BUTTON),

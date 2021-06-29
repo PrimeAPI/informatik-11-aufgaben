@@ -6,5 +6,5 @@ package de.iainschmidt.inf.textgame.framework;
  * created on 21.06.2021
  * crated for INF-11-Abschlussabgabe
  */
-public abstract class GameFrameImplLockable implements GameFrame, Inventoryable , Lockable {
+public abstract class GameFrameImplLockable implements GameFrame, Inventoryable, Lockable {
 }

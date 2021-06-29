@@ -20,7 +20,7 @@ public class TextGame {
 
     private GraphicalUserInterface gui;
 
-    private List<Item> inventory = new ArrayList<>();
+    private final List<Item> inventory = new ArrayList<>();
 
     private int tipCount = 0;
     private long startTimestamp;
@@ -30,24 +30,19 @@ public class TextGame {
         instance.loadGame();
     }
 
+    public static TextGame getInstance() {
+        return instance;
+    }
 
-    private void loadGame(){
+
+    // Getter & Setter
+
+    private void loadGame() {
         gui = new GraphicalUserInterface(new HomeScreen());
         Random random = new Random();
         ABouroEntry.passcode = Integer.valueOf(random.nextInt(9) + "" + random.nextInt(9) + random.nextInt(9) + random.nextInt(9) + "");
         System.out.println("[INFO] PIN fürs Büro: " + ABouroEntry.passcode);
         startTimestamp = System.currentTimeMillis();
-    }
-
-
-
-
-
-    // Getter & Setter
-
-
-    public static TextGame getInstance() {
-        return instance;
     }
 
     public GraphicalUserInterface getGui() {
@@ -58,7 +53,7 @@ public class TextGame {
         return inventory;
     }
 
-    public void addTippCount(){
+    public void addTippCount() {
         tipCount++;
     }
 
