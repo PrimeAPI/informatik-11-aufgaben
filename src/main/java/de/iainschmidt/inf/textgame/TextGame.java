@@ -39,8 +39,6 @@ public class TextGame {
 
     private void loadGame() {
         gui = new GraphicalUserInterface(new HomeScreen());
-        Random random = new Random();
-        ABouroEntry.passcode = Integer.valueOf(random.nextInt(9) + "" + random.nextInt(9) + random.nextInt(9) + random.nextInt(9) + "");
         System.out.println("[INFO] PIN fürs Büro: " + ABouroEntry.passcode);
         startTimestamp = System.currentTimeMillis();
     }

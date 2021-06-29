@@ -9,6 +9,7 @@ import de.iainschmidt.inf.textgame.utils.RoomChangeAction;
 import de.iainschmidt.inf.textgame.utils.RoomChangeButton;
 
 import javax.swing.*;
+import java.util.Random;
 
 /**
  * @author Lukas S. PrimeAPI
@@ -20,8 +21,9 @@ public class ABouroEntry implements GameFrame {
     /**
      * Randomly generated {@link TextGame#loadGame()}
      */
-    public static Integer passcode = 0000;
+    public static Integer passcode = 1561;
     public Integer input = null;
+
 
     @Override
     public String getRoomName() {

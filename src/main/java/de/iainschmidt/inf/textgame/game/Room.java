@@ -221,15 +221,19 @@ public enum Room {
                             .addButton("Raum verlassen", Room.B_UPSTAIRS, ButtonOrientation.BUTTON)
                             .setItems(Item.KEY_BIO)
             );
-            B_108.setFrame(
-                    RoomFactory.create(
-                            "B108",
-                            "Du hast den Bioraum geöffnet!",
-                            ""
-                    )
-                            .addButton("Raum verlassen", Room.B_UPSTAIRS, ButtonOrientation.TOP)
-                            .setKeyLevel(KeyLevel.BIOLOGY)
-            );
+
+            {
+                B_108.setFrame(
+                        RoomFactory.create(
+                                "B108",
+                                "Du hast den Bioraum geöffnet! Hier liegt ein Zettel von Frau Wutschke an Frau Wriedt." +
+                                        " Er scheint älter zu sein. Man kann nur die letzten beiden Zahlen erkennen. Diese Lauten: '61'",
+                                ""
+                        )
+                                .addButton("Raum verlassen", Room.B_UPSTAIRS, ButtonOrientation.TOP)
+                                .setKeyLevel(KeyLevel.BIOLOGY)
+                );
+            }
             B_107.setFrame(
                     RoomFactory.create(
                             "B107",
@@ -470,16 +474,25 @@ public enum Room {
                             .setKeyLevel(KeyLevel.NORMAL)
             );
 
-            C_01.setFrame(
-                    RoomFactory.create(
-                            "C01 | Bibliothek",
-                            "Du bist in der Bibliothek",
-                            ""
-                    )
-                            .addButton("C-Foryer", C_FORYER, ButtonOrientation.RIGHT)
-                            .addButton("C07", C_07, ButtonOrientation.LEFT)
-                            .setKeyLevel(KeyLevel.NORMAL)
-            );
+            {
+
+                String holeNumber = ABouroEntry.passcode.toString();
+                if(holeNumber.length() != 4){
+                    throw new IllegalStateException("ABouroEntry#passcode MUSS eine vierstellige Zahl sein! Laden der Räume wird abgebrochen...");
+                }
+                C_01.setFrame(
+                        RoomFactory.create(
+                                "C01 | Bibliothek",
+                                "Du bist in der Bibliothek. Liegt liegt ein Zettel von Frau Wutsche an Frau Labinsky. " +
+                                        "In diesem steht irgendeine PIN, welche kaum noch lesbar ist, das ein Kaffe über den Zettel ausgelaufen ist. " +
+                                        "Die ersten beiden Zahlen sind '15'",
+                                ""
+                        )
+                                .addButton("C-Foryer", C_FORYER, ButtonOrientation.RIGHT)
+                                .addButton("C07", C_07, ButtonOrientation.LEFT)
+                                .setKeyLevel(KeyLevel.NORMAL)
+                );
+            }
 
             C_07.setFrame(
                     RoomFactory.create(

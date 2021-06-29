@@ -45,8 +45,8 @@ public class A202 implements GameFrame, Lockable {
         }
         return "Du hast das richtige WLAN Passwort gefunden! Du kannst nun folgende E-Mails von Frau Wutschke an die Schulleitung lesen:\n" +
                 "\n" +
-                "1. Mail: 'Neue Klassenräume: Fr. Wriedt - B108; Fr. Labinsky - Bibliothek; ...'\n\n" +
-                "2. Mail: 'Zugang zu den Leitungs-Büros nun mit Pin! Ihre Pin finden sie in ihren Klassenräu ...'";
+                "1. Mail: 'Neue Klassenräume: Fr. Wriedt - B108; Fr. Labinsky - Biblio...'\n\n" +
+                "2. Mail: 'Zugang zu den Büros nun mit Pin! Ihre Pin finden sie in ihren Klassenr...'";
     }
 
     @Override
