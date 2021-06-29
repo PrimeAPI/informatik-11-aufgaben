@@ -18,6 +18,8 @@ public enum Item {
     KEY_UNKNOWN("Unbekannter Schlüssel",KeyLevel.COMPUTER, KeyLevel.NORMAL),
     KEY_INF("Informatiklehrer Schlüssel", KeyLevel.COMPUTER, KeyLevel.NORMAL),
     KEY_NORMAL("Schlüssel", KeyLevel.NORMAL),
+    KEY_MUSIC("Musiklehrer Schlüssel", KeyLevel.NORMAL, KeyLevel.MUSIC),
+    KEY_CHEMISTRY("Chemie-Lehrer Schlüssel", KeyLevel.NORMAL, KeyLevel.CHEMISTRY),
     FOOD("Brotdose"),
     GUITARR("Gitarre"),
     KLANGSTAEBE("Klangstäbe")

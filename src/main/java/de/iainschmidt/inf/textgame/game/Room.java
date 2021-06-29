@@ -4,6 +4,7 @@ import de.iainschmidt.inf.textgame.framework.ButtonOrientation;
 import de.iainschmidt.inf.textgame.framework.GameFrame;
 import de.iainschmidt.inf.textgame.framework.RoomFactory;
 import de.iainschmidt.inf.textgame.game.frames.EscapedScreen;
+import de.iainschmidt.inf.textgame.game.specialrooms.A202;
 import de.iainschmidt.inf.textgame.map.b.ground.Floor;
 
 
@@ -48,6 +49,7 @@ public enum Room {
     A_201,
     A_202,
     A_203,
+    A_ATTIC,
 
     C_FORYER,
     C_01,
@@ -59,6 +61,7 @@ public enum Room {
     C_07,
     C_STAIRCASE,
 
+    C_UPSTAIRS,
     C_102,
     C_103,
     C_105,
@@ -244,6 +247,18 @@ public enum Room {
                             .addButton("Raum verlassen", Room.B_UPSTAIRS, ButtonOrientation.TOP)
                             .setKeyLevel(KeyLevel.BIOLOGY)
             );
+
+
+            B_WIESE.setFrame(
+                    RoomFactory.create(
+                            "B-Wiese",
+                            "Du bist nun hinter dem B-Gebäude",
+                            ""
+                    )
+                    .addButton("Haupthof", HAUPTHOF, ButtonOrientation.TOP)
+                    .addButton("C-Wiese", C_WIESE, ButtonOrientation.LEFT)
+                    .addButton("Schulgelände verlassen", ESCAPED, ButtonOrientation.RIGHT)
+            );
         }
 
         //A-Gebäude
@@ -379,6 +394,7 @@ public enum Room {
                     .addButton("Treppe runter gehen", A_UPSTAIRS, ButtonOrientation.BUTTON)
                     .addButton("A202 (Computerraum)", A_202, ButtonOrientation.LEFT)
                     .addButton("A201 (Computerraum)", A_201, ButtonOrientation.LEFT)
+                    .addButton("Dachboden", A_ATTIC, ButtonOrientation.TOP)
             );
 
             A_201.setFrame(
@@ -393,15 +409,7 @@ public enum Room {
             );
 
             A_202.setFrame(
-                    RoomFactory.create(
-                            "A202 | Computerraum",
-                            "Hier sind alle Computer aus. Hier ist nichts Spannendes",
-                            ""
-                    )
-                    .addButton("Zurück zum Flur", A_200, ButtonOrientation.RIGHT)
-                    .addButton("A203 (Serverraum)", A_203, ButtonOrientation.TOP)
-                    .addButton("A201 (Computerraum)", A_201, ButtonOrientation.BUTTON)
-                    .setKeyLevel(KeyLevel.COMPUTER)
+                    new A202()
             );
 
             A_203.setFrame(
@@ -410,7 +418,18 @@ public enum Room {
                             "Du bist im Serverraum. Hier stehen die Server für I-Serv. Mach bloß nichts kaputt!",
                             ""
                     )
-                    .addButton("Zurücl zu A202", A_202, ButtonOrientation.BUTTON)
+                    .addButton("Zurück zu A202", A_202, ButtonOrientation.BUTTON)
+            );
+
+            A_ATTIC.setFrame(
+                    RoomFactory.create(
+                            "Dachboden",
+                            "Du bist im Dachboden! Hier ist es sehr Dunkel und Muffig." +
+                                    "In der einen Ecke hängen Stöcker.\n" +
+                                    "An einer Wand steht ein WLAN Router. Auf der Rückseite davon stehen das Passwort '" + A202.WLANKEY + "'.",
+                            ""
+                    )
+                    .addButton("Dachboden verlassen", A_200, ButtonOrientation.BUTTON)
             );
         }
 
@@ -428,6 +447,7 @@ public enum Room {
                     .addButton("C03 | Musiksammlung", C_03, ButtonOrientation.RIGHT)
                     .addButton("C04 | Musikraum", C_04, ButtonOrientation.RIGHT)
                     .addButton("Pausenhof", HAUPTHOF, ButtonOrientation.TOP)
+                            .addButton("Treppe hoch gehen [1. OG]", C_UPSTAIRS, ButtonOrientation.TOP)
                             .addButton("C05 | Musikraum", C_05, ButtonOrientation.LEFT)
                     .addButton("C-Wiese (Pausenhof)", C_WIESE, ButtonOrientation.BUTTON)
                     .setKeyLevel(KeyLevel.NORMAL)
@@ -487,6 +507,132 @@ public enum Room {
                     )
                     .addButton("C03 | Musiksammlung", C_03, ButtonOrientation.TOP)
                     .addButton("C-Foryer", C_FORYER, ButtonOrientation.LEFT)
+                    .setItems(Item.KEY_MUSIC)
+            );
+            C_05.setFrame(
+                    RoomFactory.create(
+                            "C05 | Musikraum",
+                            "Du bist im Musikraum",
+                            ""
+                    )
+                    .addButton("C06 | Sammlung", C_06, ButtonOrientation.LEFT)
+                    .addButton("C-Foryer", C_FORYER, ButtonOrientation.RIGHT)
+                            .setKeyLevel(KeyLevel.MUSIC)
+            );
+            C_06.setFrame(
+                    RoomFactory.create(
+                            "C06 | Sammlung",
+                            "Du bist in der Sammlung",//TODO
+                            ""
+                    )
+                    .addButton("Treppenhaus", C_STAIRCASE, ButtonOrientation.LEFT)
+                    .addButton("C05 | MUsikraum", C_05, ButtonOrientation.RIGHT)
+                            .setKeyLevel(KeyLevel.MUSIC)
+            );
+
+            C_STAIRCASE.setFrame(
+                    RoomFactory.create(
+                            "C-Treppenhaus",
+                            "Du bist im Treppenhaus. Die Treppe nach oben ist gesperrt, da es mal wieder vom Dach" +
+                                    "reinregnet.",
+                            ""
+                    )
+                    .addButton("C07", C_07, ButtonOrientation.TOP)
+                    .addButton("C06 | Sammlung", C_06, ButtonOrientation.RIGHT)
+                    .addButton("Gebäude verlassen [C-Wiese]", C_WIESE, ButtonOrientation.LEFT)
+            );
+
+
+
+            C_WIESE.setFrame(
+                    RoomFactory.create(
+                            "C-Wiese",
+                            "Du befindest dich hinter dem C-Gebäude",
+                            ""
+                    )
+                            .addButton("C-Gebäude betreten [Foryer]", C_FORYER, ButtonOrientation.RIGHT)
+                            .addButton("C-Gebäude betreten [Treppenhaus)", C_STAIRCASE, ButtonOrientation.LEFT)
+                    .addButton("B-Wiese", B_WIESE, ButtonOrientation.RIGHT)
+                    .addButton("Haupthof", HAUPTHOF, ButtonOrientation.TOP)
+                    .addButton("Schulgelände verlassen", ESCAPED, ButtonOrientation.LEFT)
+            );
+
+
+            C_102.setFrame(
+                    RoomFactory.create(
+                            "C102 | Chemieraum",
+                            "Du bist im Chemieraum",
+                            ""
+                    )
+                            .addButton("Raum verlassen [Flur]", C_UPSTAIRS, ButtonOrientation.LEFT)
+                            .addButton("C103 | Chemieraum", C_103, ButtonOrientation.TOP)
+            );
+
+            C_103.setFrame(
+                    RoomFactory.create(
+                            "C103 | Chemieraum",
+                            "Du bist in einem Chemieraum. Hier hat jemand seinen Schlüssel liegen gelassen",
+                            ""
+                    )
+                            .addButton("C102 | Chemieraum", C_102, ButtonOrientation.BUTTON)
+                            .addButton("C105 | Physik- und Chemieraum", C_105, ButtonOrientation.LEFT)
+                            .addButton("Raum verlassen [Flur]", C_UPSTAIRS, ButtonOrientation.LEFT)
+                            .setItems(Item.KEY_CHEMISTRY)
+            );
+
+            C_105.setFrame(
+                    RoomFactory.create(
+                            "C105 | Physik- und Chemieraum",
+                            "Du bist im neuen Physik und Chemieraum!",
+                            ""
+                    )
+                            .addButton("Raum verlassen [Flur]", C_UPSTAIRS, ButtonOrientation.RIGHT)
+                            .addButton("C103 | Chemieraum", C_103, ButtonOrientation.RIGHT)
+                            .addButton("C106 | Physikraum", C_106, ButtonOrientation.LEFT)
+                            .setKeyLevel(KeyLevel.NORMAL)
+            );
+            C_106.setFrame(
+                    RoomFactory.create(
+                            "C106 | Physikraum",
+                            "Du bist im Physikraum",
+                            ""
+                    )
+                            .addButton("C105 | Physik- und Chemieraum", C_105, ButtonOrientation.RIGHT)
+                            .addButton("C107 | Physikraum", C_107, ButtonOrientation.BUTTON)
+                            .addButton("Raum verlassen [Flur]", C_UPSTAIRS, ButtonOrientation.RIGHT)
+            );
+            C_107.setFrame(
+                    RoomFactory.create(
+                            "C107 | Physikraum",
+                            "Du bist im Physikraum",
+                            ""
+                    )
+                            .addButton("C106 | Physikraum", C_106, ButtonOrientation.TOP)
+                            .addButton("Raum verlassen [Flur]", C_UPSTAIRS, ButtonOrientation.RIGHT)
+            );
+
+            C_UPSTAIRS.setFrame(
+                    RoomFactory.create(
+                            "C-Gebäude | 1. OG",
+                            "Du bist die Treppen hoch gegangen!",
+                            ""
+                    )
+                            .addButton("C103 | Chemieraum", C_103, ButtonOrientation.RIGHT)
+                            .addButton("C102 | Chemieraum", C_102, ButtonOrientation.RIGHT)
+                            .addButton("C106 | Physikraum", C_106, ButtonOrientation.LEFT)
+                            .addButton("C107 | Physikraum", C_107, ButtonOrientation.LEFT)
+                            .addButton("C105 | Physik- und Chemieraum", C_105, ButtonOrientation.TOP)
+                            .addButton("Sammlung", C_SAMMLUNG, ButtonOrientation.BUTTON)
+                            .addButton("Treppe runter gehen", C_FORYER, ButtonOrientation.BUTTON)
+            );
+
+            C_SAMMLUNG.setFrame(
+                    RoomFactory.create(
+                            "C- Sammlung",
+                            "",
+                            ""
+                    )
+                            .addButton("Raum verlassen [Flur]", C_UPSTAIRS, ButtonOrientation.TOP)
             );
         }
     }

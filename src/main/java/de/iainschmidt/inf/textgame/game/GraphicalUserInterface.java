@@ -119,9 +119,19 @@ public class GraphicalUserInterface extends JFrame {
         int top = 400;
         int right = 500;
         int bottom = 600;
+        int special = 400;
 
         for (Button button : frame.getButtons()) {
             switch (button.getOrientation()){
+                case SPECIAL:{
+                    JButton jButton = new JButton(button.getText());
+                    jButton.setBounds(430, special, 150, 30);
+                    add(jButton);
+                    jButton.addActionListener(e -> button.getAction().onClick());
+                    components.add(jButton);
+                    special += 40;
+                    break;
+                }
                 case TOP:  {
                     JButton jButton = new JButton(button.getText());
                     jButton.setBounds(170, top, 250, 30);

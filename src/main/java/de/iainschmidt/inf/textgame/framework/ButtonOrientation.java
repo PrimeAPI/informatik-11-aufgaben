@@ -9,5 +9,6 @@ public enum ButtonOrientation {
     TOP,
     BUTTON,
     LEFT,
-    RIGHT
+    RIGHT,
+    SPECIAL
 }
