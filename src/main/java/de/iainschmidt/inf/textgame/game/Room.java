@@ -486,7 +486,7 @@ public enum Room {
                                 "Du bist in der Bibliothek. Liegt liegt ein Zettel von Frau Wutsche an Frau Labinsky. " +
                                         "In diesem steht irgendeine PIN, welche kaum noch lesbar ist, das ein Kaffe über den Zettel ausgelaufen ist. " +
                                         "Die ersten beiden Zahlen sind '15'",
-                                ""
+                                "img/bibliothek.png"
                         )
                                 .addButton("C-Foryer", C_FORYER, ButtonOrientation.RIGHT)
                                 .addButton("C07", C_07, ButtonOrientation.LEFT)
@@ -510,7 +510,7 @@ public enum Room {
                             "C02 | Musikraum",
                             "Du bist im Musikraum. Die letzte Musikklasse die hier war hat hier nicht aufgeräumt." +
                                     "Die Stühöle stehe hier noch rum.",
-                            ""
+                            "img/musik.png"
                     )
                             .addButton("C-Foryer", C_FORYER, ButtonOrientation.LEFT)
                             .addButton("C03 | Musiksammlung", C_03, ButtonOrientation.BUTTON)
@@ -521,7 +521,7 @@ public enum Room {
                     RoomFactory.create(
                             "C03 | Musiksammlung",
                             "Du bist in der Musiksammlung. Hier stehen mehrere Intrumente rum.",
-                            ""
+                            "img/musiksammlung.png"
                     )
                             .addButton("C02 | Musikraum", C_02, ButtonOrientation.TOP)
                             .addButton("C-Foryer", C_FORYER, ButtonOrientation.LEFT)
@@ -533,7 +533,7 @@ public enum Room {
                     RoomFactory.create(
                             "C04 | Musikraum",
                             "Du bist im Musikraum",
-                            ""
+                            "img/musik.png"
                     )
                             .addButton("C03 | Musiksammlung", C_03, ButtonOrientation.TOP)
                             .addButton("C-Foryer", C_FORYER, ButtonOrientation.LEFT)
@@ -543,7 +543,7 @@ public enum Room {
                     RoomFactory.create(
                             "C05 | Musikraum",
                             "Du bist im Musikraum",
-                            ""
+                            "img/musik.png"
                     )
                             .addButton("C06 | Sammlung", C_06, ButtonOrientation.LEFT)
                             .addButton("C-Foryer", C_FORYER, ButtonOrientation.RIGHT)
@@ -577,7 +577,7 @@ public enum Room {
                     RoomFactory.create(
                             "C-Wiese",
                             "Du befindest dich hinter dem C-Gebäude",
-                            ""
+                            "img/cwiese.png"
                     )
                             .addButton("C-Gebäude betreten [Foryer]", C_FORYER, ButtonOrientation.RIGHT)
                             .addButton("C-Gebäude betreten [Treppenhaus)", C_STAIRCASE, ButtonOrientation.LEFT)
@@ -591,7 +591,7 @@ public enum Room {
                     RoomFactory.create(
                             "C102 | Chemieraum",
                             "Du bist im Chemieraum",
-                            ""
+                            "img/mint2.png"
                     )
                             .addButton("Raum verlassen [Flur]", C_UPSTAIRS, ButtonOrientation.LEFT)
                             .addButton("C103 | Chemieraum", C_103, ButtonOrientation.TOP)
@@ -601,7 +601,7 @@ public enum Room {
                     RoomFactory.create(
                             "C103 | Chemieraum",
                             "Du bist in einem Chemieraum. Hier hat jemand seinen Schlüssel liegen gelassen",
-                            ""
+                            "img/mint-1.png"
                     )
                             .addButton("C102 | Chemieraum", C_102, ButtonOrientation.BUTTON)
                             .addButton("C105 | Physik- und Chemieraum", C_105, ButtonOrientation.LEFT)
@@ -613,7 +613,7 @@ public enum Room {
                     RoomFactory.create(
                             "C105 | Physik- und Chemieraum",
                             "Du bist im neuen Physik und Chemieraum!",
-                            ""
+                            "img/mint-3.png"
                     )
                             .addButton("Raum verlassen [Flur]", C_UPSTAIRS, ButtonOrientation.RIGHT)
                             .addButton("C103 | Chemieraum", C_103, ButtonOrientation.RIGHT)
@@ -624,7 +624,7 @@ public enum Room {
                     RoomFactory.create(
                             "C106 | Physikraum",
                             "Du bist im Physikraum",
-                            ""
+                            "img/mint-4.png"
                     )
                             .addButton("C105 | Physik- und Chemieraum", C_105, ButtonOrientation.RIGHT)
                             .addButton("C107 | Physikraum", C_107, ButtonOrientation.BUTTON)
@@ -634,7 +634,7 @@ public enum Room {
                     RoomFactory.create(
                             "C107 | Physikraum",
                             "Du bist im Physikraum",
-                            ""
+                            "img/mint-5.png"
                     )
                             .addButton("C106 | Physikraum", C_106, ButtonOrientation.TOP)
                             .addButton("Raum verlassen [Flur]", C_UPSTAIRS, ButtonOrientation.RIGHT)
@@ -644,7 +644,7 @@ public enum Room {
                     RoomFactory.create(
                             "C-Gebäude | 1. OG",
                             "Du bist die Treppen hoch gegangen!",
-                            ""
+                            "img/floor.png"
                     )
                             .addButton("C103 | Chemieraum", C_103, ButtonOrientation.RIGHT)
                             .addButton("C102 | Chemieraum", C_102, ButtonOrientation.RIGHT)
@@ -659,7 +659,7 @@ public enum Room {
                     RoomFactory.create(
                             "C- Sammlung",
                             "",
-                            ""
+                            "img/mint-sammlung.png"
                     )
                             .addButton("Raum verlassen [Flur]", C_UPSTAIRS, ButtonOrientation.TOP)
             );

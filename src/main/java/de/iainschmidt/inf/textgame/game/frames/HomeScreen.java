@@ -25,19 +25,26 @@ public class HomeScreen implements GameFrame {
 
     @Override
     public String getText() {
-        return "Escape the Maxe! \n" +
-                "Um zu beginnen, wähle zunächst dein Lieblingsfach aus!";
+        return """
+                Escape the Maxe!
+                
+                Vorgeschichte:
+                Es ist Samstag. Den Tag zuvor hattest du Kunstunterricht in B08. Dieser war so langweilig, dass du einfach eingeschlafen bist.
+                Als Scherz, und um zu gucken wann du wach werden würdest, haben dich deine Mitschüler und der Lehrer schlafen lassen. Sie haben
+                dich aber vergessen! Es gibt verschiedene Wege raus, jedoch wurdest du eingeschlossen. Vielleicht, hat Frau Wutschke einen 2. Schlüssel
+                in ihrem Büro....
+                """;
     }
 
     @Override
     public String getImgPath() {
-        return "img/soon.jpg";
+        return "img/school.png";
     }
 
     @Override
     public Button[] getButtons() {
         return new Button[]{
-                new Button("Kunst", new RoomChangeAction(this, new StartFrame(Room.B_08.getFrame()), true), ButtonOrientation.TOP)
+                new Button("Loglegen", new RoomChangeAction(this, Room.B_08, true), ButtonOrientation.SPECIAL)
         };
     }
 
