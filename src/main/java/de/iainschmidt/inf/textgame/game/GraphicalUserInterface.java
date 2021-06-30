@@ -4,7 +4,6 @@ import de.iainschmidt.inf.textgame.TextGame;
 import de.iainschmidt.inf.textgame.framework.Button;
 import de.iainschmidt.inf.textgame.framework.GameFrame;
 import de.iainschmidt.inf.textgame.framework.Inventoryable;
-import de.iainschmidt.inf.textgame.game.frames.InventoryFrame;
 
 import javax.swing.*;
 import java.awt.*;
@@ -165,14 +164,6 @@ public class GraphicalUserInterface extends JFrame {
 
         revalidate();
         repaint();
-    }
-
-    public void openInventory() {
-        if (frame instanceof InventoryFrame) {
-            update(((InventoryFrame) frame).prev);
-        } else {
-            update(new InventoryFrame(this.frame));
-        }
     }
 
 
