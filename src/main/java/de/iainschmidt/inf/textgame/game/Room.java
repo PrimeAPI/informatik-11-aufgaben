@@ -1,7 +1,7 @@
 package de.iainschmidt.inf.textgame.game;
 
 import de.iainschmidt.inf.textgame.framework.ButtonOrientation;
-import de.iainschmidt.inf.textgame.framework.GameFrame;
+import de.iainschmidt.inf.textgame.framework.DisplayableFrame;
 import de.iainschmidt.inf.textgame.framework.RoomFactory;
 import de.iainschmidt.inf.textgame.game.frames.EscapedScreen;
 import de.iainschmidt.inf.textgame.game.specialrooms.A202;
@@ -667,20 +667,20 @@ public enum Room {
     }
 
 
-    GameFrame frame;
+    DisplayableFrame frame;
 
-    Room(GameFrame frame) {
+    Room(DisplayableFrame frame) {
         this.frame = frame;
     }
 
     Room() {
     }
 
-    public GameFrame getFrame() {
+    public DisplayableFrame getFrame() {
         return frame;
     }
 
-    public void setFrame(GameFrame frame) {
+    public void setFrame(DisplayableFrame frame) {
         this.frame = frame;
     }
 

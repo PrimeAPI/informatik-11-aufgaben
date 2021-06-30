@@ -1,6 +1,6 @@
 package de.iainschmidt.inf.textgame.framework;
 
-public abstract class GameFrameImpl implements GameFrame, Inventoryable {
+public abstract class GameFrameImpl implements DisplayableFrame, Inventoryable {
 
     boolean visited = false;
 

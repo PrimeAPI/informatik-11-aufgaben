@@ -5,7 +5,7 @@ package de.iainschmidt.inf.textgame.framework;
  * created on 17.06.2021
  * crated for INF-11-Abschlussabgabe
  */
-public interface GameFrame {
+public interface DisplayableFrame {
 
     String getRoomName();
 

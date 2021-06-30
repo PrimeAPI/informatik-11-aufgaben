@@ -2,7 +2,7 @@ package de.iainschmidt.inf.textgame.utils;
 
 import de.iainschmidt.inf.textgame.TextGame;
 import de.iainschmidt.inf.textgame.framework.ButtonAction;
-import de.iainschmidt.inf.textgame.framework.GameFrame;
+import de.iainschmidt.inf.textgame.framework.DisplayableFrame;
 import de.iainschmidt.inf.textgame.framework.Lockable;
 import de.iainschmidt.inf.textgame.game.Item;
 import de.iainschmidt.inf.textgame.game.Room;
@@ -15,23 +15,23 @@ import de.iainschmidt.inf.textgame.game.frames.ErrorScreen;
  */
 public class RoomChangeAction implements ButtonAction {
 
-    public final GameFrame from;
-    public GameFrame to;
+    public final DisplayableFrame from;
+    public DisplayableFrame to;
     public Room room;
     public boolean ignoreKey = false;
 
-    public RoomChangeAction(GameFrame from, GameFrame to) {
+    public RoomChangeAction(DisplayableFrame from, DisplayableFrame to) {
         this.from = from;
         this.to = to;
     }
 
-    public RoomChangeAction(GameFrame from, GameFrame to, boolean ignoreKey) {
+    public RoomChangeAction(DisplayableFrame from, DisplayableFrame to, boolean ignoreKey) {
         this.from = from;
         this.to = to;
         this.ignoreKey = ignoreKey;
     }
 
-    public RoomChangeAction(GameFrame from, Room to, boolean ignoreKey) {
+    public RoomChangeAction(DisplayableFrame from, Room to, boolean ignoreKey) {
         this.from = from;
         this.room = to;
         this.ignoreKey = ignoreKey;

@@ -2,7 +2,7 @@ package de.iainschmidt.inf.textgame.game;
 
 import de.iainschmidt.inf.textgame.TextGame;
 import de.iainschmidt.inf.textgame.framework.Button;
-import de.iainschmidt.inf.textgame.framework.GameFrame;
+import de.iainschmidt.inf.textgame.framework.DisplayableFrame;
 import de.iainschmidt.inf.textgame.framework.Inventoryable;
 
 import javax.swing.*;
@@ -19,9 +19,9 @@ public class GraphicalUserInterface extends JFrame {
 
     private static final String TITLE = "Escape the Maxe";
     final List<Component> components = new ArrayList<>();
-    private GameFrame frame;
+    private DisplayableFrame frame;
 
-    public GraphicalUserInterface(GameFrame frame) {
+    public GraphicalUserInterface(DisplayableFrame frame) {
         setLayout(null);
         setVisible(true);
         setSize(810, 800);
@@ -42,7 +42,7 @@ public class GraphicalUserInterface extends JFrame {
         components.clear();
     }
 
-    public void update(GameFrame frame) {
+    public void update(DisplayableFrame frame) {
         this.frame = frame;
         frame.setVisited(true);
         clear();

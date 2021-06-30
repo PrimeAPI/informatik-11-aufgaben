@@ -55,7 +55,7 @@ public class RoomFactory {
     }
 
 
-    public GameFrame build() {
+    public DisplayableFrame build() {
         if (key == null) {
             return new GameFrameImpl() {
                 final ArrayList<Item> items = RoomFactory.this.items;

@@ -2,7 +2,7 @@ package de.iainschmidt.inf.textgame.game.frames;
 
 import de.iainschmidt.inf.textgame.framework.Button;
 import de.iainschmidt.inf.textgame.framework.ButtonOrientation;
-import de.iainschmidt.inf.textgame.framework.GameFrame;
+import de.iainschmidt.inf.textgame.framework.DisplayableFrame;
 import de.iainschmidt.inf.textgame.utils.RoomChangeAction;
 
 /**
@@ -10,12 +10,12 @@ import de.iainschmidt.inf.textgame.utils.RoomChangeAction;
  * created on 17.06.2021
  * crated for INF-11-Abschlussabgabe
  */
-public class ErrorScreen implements GameFrame {
+public class ErrorScreen implements DisplayableFrame {
 
     final String message;
-    final GameFrame from;
+    final DisplayableFrame from;
 
-    public ErrorScreen(String message, GameFrame from) {
+    public ErrorScreen(String message, DisplayableFrame from) {
         this.message = message;
         this.from = from;
     }

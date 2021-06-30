@@ -2,7 +2,7 @@ package de.iainschmidt.inf.textgame.game.frames;
 
 import de.iainschmidt.inf.textgame.framework.Button;
 import de.iainschmidt.inf.textgame.framework.ButtonOrientation;
-import de.iainschmidt.inf.textgame.framework.GameFrame;
+import de.iainschmidt.inf.textgame.framework.DisplayableFrame;
 import de.iainschmidt.inf.textgame.game.Room;
 import de.iainschmidt.inf.textgame.utils.RoomChangeAction;
 
@@ -11,7 +11,7 @@ import de.iainschmidt.inf.textgame.utils.RoomChangeAction;
  * created on 17.06.2021
  * crated for INF-11-Abschlussabgabe
  */
-public class HomeScreen implements GameFrame {
+public class HomeScreen implements DisplayableFrame {
 
     @Override
     public String getRoomName() {

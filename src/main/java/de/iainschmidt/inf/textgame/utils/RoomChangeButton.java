@@ -2,7 +2,7 @@ package de.iainschmidt.inf.textgame.utils;
 
 import de.iainschmidt.inf.textgame.framework.Button;
 import de.iainschmidt.inf.textgame.framework.ButtonOrientation;
-import de.iainschmidt.inf.textgame.framework.GameFrame;
+import de.iainschmidt.inf.textgame.framework.DisplayableFrame;
 import de.iainschmidt.inf.textgame.game.Room;
 
 /**
@@ -11,11 +11,11 @@ import de.iainschmidt.inf.textgame.game.Room;
  * crated for INF-11-Abschlussabgabe
  */
 public class RoomChangeButton extends Button {
-    public RoomChangeButton(String text, GameFrame from, GameFrame to, ButtonOrientation orientation) {
+    public RoomChangeButton(String text, DisplayableFrame from, DisplayableFrame to, ButtonOrientation orientation) {
         super(text, new RoomChangeAction(from, to, false), orientation);
     }
 
-    public RoomChangeButton(String text, GameFrame from, Room to, ButtonOrientation orientation) {
+    public RoomChangeButton(String text, DisplayableFrame from, Room to, ButtonOrientation orientation) {
         super(text, new RoomChangeAction(from, to, false), orientation);
     }
 }

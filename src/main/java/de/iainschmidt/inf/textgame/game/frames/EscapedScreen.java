@@ -2,7 +2,7 @@ package de.iainschmidt.inf.textgame.game.frames;
 
 import de.iainschmidt.inf.textgame.TextGame;
 import de.iainschmidt.inf.textgame.framework.Button;
-import de.iainschmidt.inf.textgame.framework.GameFrame;
+import de.iainschmidt.inf.textgame.framework.DisplayableFrame;
 import de.iainschmidt.inf.textgame.framework.Lockable;
 import de.iainschmidt.inf.textgame.game.KeyLevel;
 import de.iainschmidt.inf.textgame.game.Room;
@@ -13,7 +13,7 @@ import de.iainschmidt.inf.textgame.utils.TimeUtils;
  * created on 22.06.2021
  * crated for INF-11-Abschlussabgabe
  */
-public class EscapedScreen implements GameFrame, Lockable {
+public class EscapedScreen implements DisplayableFrame, Lockable {
     @Override
     public String getRoomName() {
         return "ENDING";
