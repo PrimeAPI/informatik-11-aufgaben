@@ -9,7 +9,7 @@ import de.iainschmidt.inf.textgame.game.Room;
 import de.iainschmidt.inf.textgame.utils.TimeUtils;
 
 /**
- * @author Lukas S. PrimeAPI
+ * @author Iain Schmidt
  * created on 22.06.2021
  * crated for INF-11-Abschlussabgabe
  */

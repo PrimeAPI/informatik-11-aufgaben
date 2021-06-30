@@ -1,12 +1,18 @@
 package de.iainschmidt.inf.textgame.utils;
 
 /**
- * @author Lukas S. PrimeAPI
+ * @author Iain Schmidt
  * created on 30.06.2021
  * crated for INF-11-Abschlussabgabe
  */
 public class TimeUtils {
 
+    /**
+     * Translate a long of millies to a human readable form
+     * @param remaining The Time
+     * @param displaySeconds True if seconds sould be displayed
+     * @return The translated String
+     */
     public static String unixToRemaining(long remaining, boolean displaySeconds){
         if(remaining == -1) return "Unendlich";
         String msg = "";

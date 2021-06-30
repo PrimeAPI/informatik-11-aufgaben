@@ -6,13 +6,16 @@ import de.iainschmidt.inf.textgame.framework.RoomFactory;
 import de.iainschmidt.inf.textgame.game.frames.EscapedScreen;
 import de.iainschmidt.inf.textgame.game.specialrooms.A202;
 import de.iainschmidt.inf.textgame.game.specialrooms.ABouroEntry;
-import de.iainschmidt.inf.textgame.map.b.ground.Floor;
 
 
 /**
- * @author Lukas S. PrimeAPI
+ * @author Iain Schmidt
  * created on 17.06.2021
  * crated for INF-11-Abschlussabgabe
+ *
+ * This enum contains all the Rooms in the Game.
+ * Frames are being loaded in static state, as a workaround to llegal forward reference
+ *
  */
 public enum Room {
 
@@ -82,6 +85,9 @@ public enum Room {
     ESCAPED(new EscapedScreen());
 
 
+    /*
+      Loading content of Rooms
+     */
     static {
 
         //B-GEBÄUDE
@@ -142,7 +148,20 @@ public enum Room {
                             .addButton("B01 (Klassenraum)", Room.B_01, ButtonOrientation.RIGHT)
                             .addButton("Flur betreten", Room.B_FLOOR, ButtonOrientation.RIGHT)
             );
-            B_FLOOR.setFrame(new Floor()); //In getrennte Class gepackt für Übersuchtlichkeit
+            B_FLOOR.setFrame(
+                    RoomFactory.create(
+                            "Flur - B Gebäude",
+                            "Du bist im Flur. Du kannst von hier aus in Klassenräume und von die Kunsträume gehen!",
+                            "img/floor.png"
+                    )
+                        .addButton("B02",  Room.B_02, ButtonOrientation.LEFT)
+                        .addButton("Foryer",  Room.B_FORYER, ButtonOrientation.LEFT)
+                        .addButton("B03",  Room.B_03, ButtonOrientation.TOP)
+                        .addButton("B05",  Room.B_05, ButtonOrientation.RIGHT)
+                        .addButton("B08 (Kustsammlung)",  Room.B_08_SAMMLUNG, ButtonOrientation.LEFT)
+                        .addButton("B07 (Kustsammlung)",  Room.B_07, ButtonOrientation.BUTTON)
+                        .addButton("B06 (Kunstraum)",  Room.B_06, ButtonOrientation.RIGHT)
+            );
             B_01.setFrame(
                     RoomFactory.create(
                             "B01 | Klassenraum der 8a",

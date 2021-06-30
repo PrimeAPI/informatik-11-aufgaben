@@ -11,7 +11,7 @@ import javax.swing.*;
 import java.util.ArrayList;
 
 /**
- * @author Lukas S. PrimeAPI
+ * @author Iain Schmidt
  * created on 29.06.2021
  * crated for INF-11-Abschlussabgabe
  */

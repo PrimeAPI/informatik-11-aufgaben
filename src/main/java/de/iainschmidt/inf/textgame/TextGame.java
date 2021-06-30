@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author Lukas S.
+ * @author Iain Schmidt
  * created on 17.06.2021
  * crated for INF-11-Abschlussabgabe
  */
@@ -18,32 +18,35 @@ public class TextGame {
     private static TextGame instance;
 
     private GraphicalUserInterface gui;
-
     private final List<Item> inventory = new ArrayList<>();
-
     private int tipCount = 0;
     private long startTimestamp;
 
-    public long getStartTimestamp() {
-        return startTimestamp;
-    }
 
     public static void main(String[] args) {
         instance = new TextGame();
         instance.loadGame();
     }
 
-    public static TextGame getInstance() {
-        return instance;
-    }
 
 
-    // Getter & Setter
-
+    /**
+     * This prepares the Game and starts the window
+     */
     private void loadGame() {
         gui = new GraphicalUserInterface(new HomeScreen());
         System.out.println("[INFO] PIN fürs Büro: " + ABouroEntry.passcode);
         startTimestamp = System.currentTimeMillis();
+    }
+
+    //Getter & Setter
+
+    public static TextGame getInstance() {
+        return instance;
+    }
+
+    public long getStartTimestamp() {
+        return startTimestamp;
     }
 
     public GraphicalUserInterface getGui() {

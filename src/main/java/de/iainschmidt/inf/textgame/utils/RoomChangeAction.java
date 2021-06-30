@@ -9,9 +9,13 @@ import de.iainschmidt.inf.textgame.game.Room;
 import de.iainschmidt.inf.textgame.game.frames.ErrorScreen;
 
 /**
- * @author Lukas S. PrimeAPI
+ * @author Iain Schmidt
  * created on 17.06.2021
  * crated for INF-11-Abschlussabgabe
+ *
+ * This {@link ButtonAction} is used to easely create an action to change Rooms.
+ * It checks if the Player has the Pemrission ({@link de.iainschmidt.inf.textgame.game.KeyLevel} to enter the Room
+ *
  */
 public class RoomChangeAction implements ButtonAction {
 

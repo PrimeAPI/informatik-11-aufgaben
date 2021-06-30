@@ -9,6 +9,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * @author Iain Schmidt
+ * crated for INF-11-Abschlussabgabe
+ *<br>
+ * This class is used to inline-create an {@link DisplayableFrame}
+ */
 public class RoomFactory {
 
 
@@ -55,6 +61,10 @@ public class RoomFactory {
     }
 
 
+    /**
+     * builds the Room
+     * @return the builded Room
+     */
     public DisplayableFrame build() {
         if (key == null) {
             return new GameFrameImpl() {

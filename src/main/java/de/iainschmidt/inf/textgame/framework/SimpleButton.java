@@ -3,9 +3,13 @@ package de.iainschmidt.inf.textgame.framework;
 import de.iainschmidt.inf.textgame.game.Room;
 
 /**
- * @author Lukas S. PrimeAPI
+ * @author Iain Schmidt
  * created on 21.06.2021
  * crated for INF-11-Abschlussabgabe
+ * <br>
+ * An Object used to create easy {@link Button buttons} in order to store them.
+ * <br>
+ * [IMPORTANT] THIS CANNOT USED TO BE RENDERED. THIS HAS TO BE TRANSLATED TO A {@link Button}!
  */
 public class SimpleButton {
 

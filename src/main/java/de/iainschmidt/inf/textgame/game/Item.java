@@ -4,9 +4,12 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * @author Lukas S. PrimeAPI
+ * @author Iain Schmidt
  * created on 17.06.2021
  * crated for INF-11-Abschlussabgabe
+ * <br>
+ * A list of all Items there can be
+ *
  */
 public enum Item {
 
