@@ -88,7 +88,7 @@ public enum Room {
         {
             B_06.setFrame(
                     RoomFactory
-                            .create("B06 | Kunstraum", "Du bist in einem Kunstraum", "")
+                            .create("B06 | Kunstraum", "Du bist in einem Kunstraum", "img/kunstraum.png")
                             .addButton("Flur", Room.B_FLOOR, ButtonOrientation.TOP)
                             .addButton("B07 (Kunstsammlung)", Room.B_07, ButtonOrientation.LEFT)
                             .setItems(Item.KEY_ART)
@@ -99,7 +99,7 @@ public enum Room {
                             .create(
                                     "B07 | Kunstsammlung",
                                     "Du hast die Kunstsammlung aufgeschlossen!\nHier steht eine Liege, eine Kaffemaschiene und Tee",
-                                    ""
+                                    "img/kafeeecke.png"
                             )
                             .addButton("B08 KunstSammlung", Room.B_08_SAMMLUNG, ButtonOrientation.LEFT)
                             .addButton("B06 | Kunstraum", Room.B_06, ButtonOrientation.RIGHT)
@@ -111,7 +111,7 @@ public enum Room {
                             .create(
                                     "B08 | Kunstsammlung",
                                     "Du bist in der Werkstatt! Hier stehen einige Werkzeuge für den Kunstunterricht",
-                                    ""
+                                    "img/kunstwerkstatt.png"
                             )
                             .addButton("B08 Kunstraum", Room.B_08, ButtonOrientation.LEFT)
                             .addButton("Flur", Room.B_FLOOR, ButtonOrientation.TOP)
@@ -123,7 +123,7 @@ public enum Room {
                             .create(
                                     "B08 | Unterrichtsraum",
                                     "Du bist jetzt im Kustraum. Ausm Fenster kannst du auf die B-Wiese rausgucken.",
-                                    ""
+                                    "img/kunstraum.png"
                             )
                             .addButton("B08 KunstSammlung", Room.B_08_SAMMLUNG, ButtonOrientation.RIGHT)
                             .addButton("B-Foryer", Room.B_FORYER, ButtonOrientation.TOP)
@@ -134,7 +134,7 @@ public enum Room {
                             .create(
                                     "B-Foryer",
                                     "Du bist in das B-Gebäude gegangen! Von hier aus kannst du \n ins A-Gebäude, die Treppe hoch oder zu den Kunsträumen!",
-                                    ""
+                                    "img/bgebaude.png"
                             ).addButton("Pausenhof", Room.HAUPTHOF, ButtonOrientation.LEFT)
                             .addButton("B08 (Kunstraum)", Room.B_08, ButtonOrientation.BUTTON)
                             .addButton("Treppe hoch", Room.B_UPSTAIRS, ButtonOrientation.TOP)
@@ -147,7 +147,7 @@ public enum Room {
                     RoomFactory.create(
                             "B01 | Klassenraum der 8a",
                             "Du bist im Klassenraum der 8a. Ein(e) Schüler(in) hat sein/ihr Pausenbrot vergessen",
-                            ""
+                            "img/classroom-1.png"
                     )
                             .addButton("B-Foryer", Room.B_FORYER, ButtonOrientation.BUTTON)
                             .setItems(Item.FOOD)
@@ -156,7 +156,7 @@ public enum Room {
                     RoomFactory.create(
                             "B02 | Klassenraum der 9e",
                             "Du bist im Klassenraum der 9e.",
-                            ""
+                            "img/classroom-2.png"
                     )
                             .addButton("Flur", Room.B_FLOOR, ButtonOrientation.BUTTON)
             );
@@ -164,7 +164,7 @@ public enum Room {
                     RoomFactory.create(
                             "B03 | Klassenraum der 11b",
                             "Du bist im Klassenraum der 11b.",
-                            ""
+                            "img/classroom-3.png"
                     )
                             .addButton("Flur", Room.B_FLOOR, ButtonOrientation.BUTTON)
             );
@@ -172,7 +172,7 @@ public enum Room {
                     RoomFactory.create(
                             "B05 | Klassenraum der 8e",
                             "Du bist im Klassenraum der 8e.",
-                            ""
+                            "img/classroom-1.png"
                     )
                             .addButton("Flur", Room.B_FLOOR, ButtonOrientation.BUTTON)
             );
@@ -181,7 +181,7 @@ public enum Room {
                     RoomFactory.create(
                             "B - 1. OG",
                             "Du bist nun die Treppen hochgekommen. Von hier aus kommst du zu den BioRäumen",
-                            ""
+                            "img/floor.png"
                     )
                             .addButton("B101 (Bioraum)", Room.B_101, ButtonOrientation.LEFT)
                             .addButton("B102 (Klassenraum)", Room.B_102, ButtonOrientation.TOP)
@@ -197,7 +197,7 @@ public enum Room {
                             "B102 | Klassenraum der 7a",
                             "Du bist im Klassenraum der 7a. Herr Karasch hatte hier zuletzt Unterricht, und scheint seinen Schlüssel vergessen zu haben!" +
                                     "",
-                            ""
+                            "img/classroom-1.png"
                     )
                             .addButton("Raum verlassen", B_UPSTAIRS, ButtonOrientation.BUTTON)
                             .setItems(Item.KEY_INF)
@@ -207,7 +207,7 @@ public enum Room {
                             "B102 | Klassenraum der 7b",
                             "Du bist im Klassenraum der 7b!" +
                                     "",
-                            ""
+                            "img/classroom-2.png"
                     )
                             .addButton("Raum verlassen", B_UPSTAIRS, ButtonOrientation.BUTTON)
             );
@@ -216,7 +216,7 @@ public enum Room {
                     RoomFactory.create(
                             "B101 | Bioraum",
                             "Diese Bioraum scheint auggeschlossen zu sein. Jemand hat seine Schlüssel verloren",
-                            ""
+                            "img/bioraum.png"
                     )
                             .addButton("Raum verlassen", Room.B_UPSTAIRS, ButtonOrientation.BUTTON)
                             .setItems(Item.KEY_BIO)
@@ -228,7 +228,7 @@ public enum Room {
                                 "B108",
                                 "Du hast den Bioraum geöffnet! Hier liegt ein Zettel von Frau Wutschke an Frau Wriedt." +
                                         " Er scheint älter zu sein. Man kann nur die letzten beiden Zahlen erkennen. Diese Lauten: '61'",
-                                ""
+                                "img/bioraum.png"
                         )
                                 .addButton("Raum verlassen", Room.B_UPSTAIRS, ButtonOrientation.TOP)
                                 .setKeyLevel(KeyLevel.BIOLOGY)
@@ -238,7 +238,7 @@ public enum Room {
                     RoomFactory.create(
                             "B107",
                             "Du hast die Biosammlung geöffnet! Hier stehen einige Vitrinen mit Skeletten von Tieren.",
-                            ""
+                            "img/biosammlung.png"
                     )
                             .addButton("Raum verlassen", Room.B_UPSTAIRS, ButtonOrientation.TOP)
                             .setKeyLevel(KeyLevel.BIOLOGY)
@@ -247,7 +247,7 @@ public enum Room {
                     RoomFactory.create(
                             "B106",
                             "Du hast den Bioraum geöffnet!",
-                            ""
+                            "img/bioraum.png"
                     )
                             .addButton("Raum verlassen", Room.B_UPSTAIRS, ButtonOrientation.TOP)
                             .setKeyLevel(KeyLevel.BIOLOGY)
@@ -258,7 +258,7 @@ public enum Room {
                     RoomFactory.create(
                             "B-Wiese",
                             "Du bist nun hinter dem B-Gebäude",
-                            ""
+                            "img/bwiese.png"
                     )
                             .addButton("Haupthof", HAUPTHOF, ButtonOrientation.TOP)
                             .addButton("C-Wiese", C_WIESE, ButtonOrientation.LEFT)
@@ -272,7 +272,7 @@ public enum Room {
                     RoomFactory.create(
                             "Haupthof",
                             "Du bist auf dem Pausenhof. Von hier kannst du in alle Gebäude gehen",
-                            ""
+                            "img/haupthof.png"
                     )
                             .addButton("A-Gebäude (Foryer)", A_FORYER, ButtonOrientation.LEFT)
                             .addButton("A-Gebäude (Treppenhaus)", A_STAIRCASE, ButtonOrientation.TOP)
@@ -285,8 +285,8 @@ public enum Room {
             A_STAIRCASE.setFrame(
                     RoomFactory.create(
                             "A | Treppenhaus",
-                            "Du bist nun im Treppenhaus des A-Gebäudes",
-                            ""
+                            "Du bist nun im Treppenhaus/Flur des A-Gebäudes",
+                            "img/floor.png"
                     )
                             .addButton("Pausenhof", Room.HAUPTHOF, ButtonOrientation.BUTTON)
                             .addButton("A07 | Klassenraum", A_07, ButtonOrientation.LEFT)
@@ -302,7 +302,7 @@ public enum Room {
                             "A-Foryer",
                             "Du bist nun im A-Foryer. Die Türen zur Straße sind verschlossen. Nur die Schulleitung kann diese Tür öffnen.\n" +
                                     "Wann Frau Wutschke am Montag wohl wieder zur Schule kommt...",
-                            ""
+                            "img/agebaude.png"
                     )
                             .addButton("Treppe hoch gehen", A_UPSTAIRS, ButtonOrientation.TOP)
                             .addButton("Schule verlassen", ESCAPED, ButtonOrientation.TOP)
@@ -313,7 +313,7 @@ public enum Room {
                     RoomFactory.create(
                             "A07 | Klassenraum der 7a",
                             "Du bist im Klassenraum der 7a",
-                            ""
+                            "img/classroom-1.png"
                     )
                             .addButton("Raum verlassen", A_STAIRCASE, ButtonOrientation.BUTTON)
             );
@@ -321,7 +321,7 @@ public enum Room {
                     RoomFactory.create(
                             "A08 | Klassenraum der 7d",
                             "Du bist im Klassenraum der 7d",
-                            ""
+                            "img/classroom-2.png"
                     )
                             .addButton("Raum verlassen", A_STAIRCASE, ButtonOrientation.BUTTON)
             );
@@ -329,7 +329,7 @@ public enum Room {
                     RoomFactory.create(
                             "Cafeteria",
                             "Du bist in der Cafeteria. Hier hat jemand eine Brotdose vergessen. Du siehst auch einen Schlüssel, den du nicht zuordnen kannst.",
-                            ""
+                            "img/cafeteria.png"
                     )
                             .setItems(Item.FOOD, Item.KEY_UNKNOWN)
                             .addButton("Cafeteria verlassen", A_STAIRCASE, ButtonOrientation.BUTTON)
@@ -339,7 +339,7 @@ public enum Room {
                     RoomFactory.create(
                             "A - 1. OG",
                             "Du bist nun im ersten Stock!",
-                            ""
+                            "img/floor.png"
                     )
                             .addButton("Büro betreten", A_BOURO_ENTRY, ButtonOrientation.LEFT)
                             .addButton("Treppe hoch gehen", A_200, ButtonOrientation.TOP)
@@ -355,7 +355,7 @@ public enum Room {
                     RoomFactory.create(
                             "A121 | Klassenraum 8a",
                             "Du bist im Klassenraum der 8a",
-                            ""
+                            "img/classroom-1.png"
                     )
                             .addButton("Raum verlassen", A_UPSTAIRS, ButtonOrientation.BUTTON)
             );
@@ -364,7 +364,7 @@ public enum Room {
                     RoomFactory.create(
                             "A112 | Klassenraum 11b",
                             "Du bist im Klassenraum der 11b",
-                            ""
+                            "img/classroom-2.png"
                     )
                             .addButton("Raum verlassen", A_UPSTAIRS, ButtonOrientation.BUTTON)
             );
@@ -373,7 +373,7 @@ public enum Room {
                     RoomFactory.create(
                             "A113 | Klassenraum 10e",
                             "Du bist im Klassenraum der 10e",
-                            ""
+                            "img/classroom-3.png"
                     )
                             .addButton("Raum verlassen", A_UPSTAIRS, ButtonOrientation.BUTTON)
             );
@@ -395,7 +395,7 @@ public enum Room {
                             "Du bist nun vor den Computerräumen.\n" +
                                     "Im Flur steht ein Schrank. In diesem kannst du einen Stundenplan von einem Schüler erkennen." +
                                     "Du kannst lesen, dass Herr Karasch zuletzt in B102 mit der 7d Unterricht hatte.",
-                            ""
+                            "img/floor.png"
                     )
                             .addButton("Treppe runter gehen", A_UPSTAIRS, ButtonOrientation.BUTTON)
                             .addButton("A202 (Computerraum)", A_202, ButtonOrientation.LEFT)
@@ -407,7 +407,7 @@ public enum Room {
                     RoomFactory.create(
                             "A201 | Computerraum",
                             "Hier sind alle Computer aus. Hier ist nichts Spannendes",
-                            ""
+                            "img/computerraum.png"
                     )
                             .addButton("Zurück zum Flur", A_200, ButtonOrientation.RIGHT)
                             .addButton("A202 (Computerraum)", A_202, ButtonOrientation.TOP)
@@ -422,7 +422,7 @@ public enum Room {
                     RoomFactory.create(
                             "A203 | Serverraum",
                             "Du bist im Serverraum. Hier stehen die Server für I-Serv. Mach bloß nichts kaputt!",
-                            ""
+                            "img/serverraum.png"
                     )
                             .addButton("Zurück zu A202", A_202, ButtonOrientation.BUTTON)
             );
@@ -433,7 +433,7 @@ public enum Room {
                             "Du bist im Dachboden! Hier ist es sehr Dunkel und Muffig." +
                                     "In der einen Ecke hängen Stöcker.\n" +
                                     "An einer Wand steht ein WLAN Router. Auf der Rückseite davon stehen das Passwort '" + A202.WLANKEY + "'.",
-                            ""
+                            "img/attic.png"
                     )
                             .addButton("Dachboden verlassen", A_200, ButtonOrientation.BUTTON)
             );
@@ -442,7 +442,7 @@ public enum Room {
                     RoomFactory.create(
                             "Büro",
                             "Du bist nun im Büro! Hier liegt der Schlüssel der Schulleitung, mit dem du die Schule verlassen kannst!\n",
-                            ""
+                            "img/bouro.png"
                     )
                             .addButton("Büro verlassen", A_UPSTAIRS, ButtonOrientation.RIGHT)
                             .setItems(Item.KEYS_HEADTEACHER)
@@ -461,7 +461,7 @@ public enum Room {
                             "C | Foryer",
                             "Du bist im Foryer des C-Gebäudes. Von hier kannst du in die Bibliothek, in die Musikräume" +
                                     "und die Treppe hoch gehen",
-                            ""
+                            "img/cgebaude.png"
                     )
                             .addButton("C01 | Bibliothek", C_01, ButtonOrientation.LEFT)
                             .addButton("C02 | Musikraum", C_02, ButtonOrientation.RIGHT)

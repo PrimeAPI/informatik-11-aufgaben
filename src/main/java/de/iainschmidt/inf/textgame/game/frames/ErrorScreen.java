@@ -37,7 +37,7 @@ public class ErrorScreen implements GameFrame {
 
     @Override
     public String getImgPath() {
-        return "null";
+        return "img/lock.png";
     }
 
     @Override

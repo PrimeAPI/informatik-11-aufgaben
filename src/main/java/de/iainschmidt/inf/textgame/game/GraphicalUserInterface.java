@@ -25,7 +25,9 @@ public class GraphicalUserInterface extends JFrame {
     public GraphicalUserInterface(GameFrame frame) {
         setLayout(null);
         setVisible(true);
-        setSize(800, 800);
+        setSize(810, 800);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         setTitle(TITLE);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         JLabel inv = new JLabel("Dein Inventar:");

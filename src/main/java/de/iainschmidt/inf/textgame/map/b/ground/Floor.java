@@ -32,7 +32,7 @@ public class Floor extends GameFrameImpl {
 
     @Override
     public String getImgPath() {
-        return "null";
+        return "img/floor.png";
     }
 
     @Override
