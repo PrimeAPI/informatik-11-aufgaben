@@ -18,4 +18,9 @@ public interface GameFrame {
 
     Button[] getButtons();
 
+
+    boolean isVisited();
+
+    void setVisited(boolean visited);
+
 }

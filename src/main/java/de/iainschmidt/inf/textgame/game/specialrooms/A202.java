@@ -1,23 +1,22 @@
 package de.iainschmidt.inf.textgame.game.specialrooms;
 
 import de.iainschmidt.inf.textgame.TextGame;
-import de.iainschmidt.inf.textgame.framework.Button;
-import de.iainschmidt.inf.textgame.framework.ButtonOrientation;
-import de.iainschmidt.inf.textgame.framework.GameFrame;
-import de.iainschmidt.inf.textgame.framework.Lockable;
+import de.iainschmidt.inf.textgame.framework.*;
+import de.iainschmidt.inf.textgame.game.Item;
 import de.iainschmidt.inf.textgame.game.KeyLevel;
 import de.iainschmidt.inf.textgame.game.Room;
 import de.iainschmidt.inf.textgame.utils.RoomChangeAction;
 import de.iainschmidt.inf.textgame.utils.RoomChangeButton;
 
 import javax.swing.*;
+import java.util.ArrayList;
 
 /**
  * @author Lukas S. PrimeAPI
  * created on 29.06.2021
  * crated for INF-11-Abschlussabgabe
  */
-public class A202 implements GameFrame, Lockable {
+public class A202 extends GameFrameImplLockable {
 
     public static String WLANKEY = "01437421";
     String input = null;
@@ -83,5 +82,15 @@ public class A202 implements GameFrame, Lockable {
     private void openWLAN() {
         input = JOptionPane.showInputDialog("Wie ist das WLAN Passwort?", null);
         new RoomChangeAction(this, this).onClick();
+    }
+
+    @Override
+    public ArrayList<Item> getItems() {
+        return null;
+    }
+
+    @Override
+    public void removeItem(Item item) {
+
     }
 }

@@ -46,4 +46,12 @@ public class ErrorScreen implements GameFrame {
                 new Button("Zurück", new RoomChangeAction(this, from), ButtonOrientation.TOP)
         };
     }
+
+    @Override
+    public boolean isVisited() {
+        return false;
+    }
+
+    @Override
+    public void setVisited(boolean visited) {}
 }

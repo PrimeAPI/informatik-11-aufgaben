@@ -40,4 +40,14 @@ public class HomeScreen implements GameFrame {
                 new Button("Kunst", new RoomChangeAction(this, new StartFrame(Room.B_08.getFrame()), true), ButtonOrientation.TOP)
         };
     }
+
+
+
+    @Override
+    public boolean isVisited() {
+        return false;
+    }
+
+    @Override
+    public void setVisited(boolean visited) {}
 }

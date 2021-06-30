@@ -43,6 +43,7 @@ public class GraphicalUserInterface extends JFrame {
 
     public void update(GameFrame frame) {
         this.frame = frame;
+        frame.setVisited(true);
         clear();
 
         //Title

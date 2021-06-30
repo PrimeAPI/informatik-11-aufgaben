@@ -50,4 +50,14 @@ public class InventoryFrame implements GameFrame {
                 new Button("Zurück", new RoomChangeAction(this, prev), ButtonOrientation.TOP)
         };
     }
+
+
+
+    @Override
+    public boolean isVisited() {
+        return false;
+    }
+
+    @Override
+    public void setVisited(boolean visited) {}
 }

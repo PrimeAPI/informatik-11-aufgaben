@@ -45,4 +45,14 @@ public class StartFrame implements GameFrame {
     public String getRoomName() {
         return "START";
     }
+
+
+
+    @Override
+    public boolean isVisited() {
+        return false;
+    }
+
+    @Override
+    public void setVisited(boolean visited) {}
 }

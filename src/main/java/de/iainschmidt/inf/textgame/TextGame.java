@@ -25,6 +25,10 @@ public class TextGame {
     private int tipCount = 0;
     private long startTimestamp;
 
+    public long getStartTimestamp() {
+        return startTimestamp;
+    }
+
     public static void main(String[] args) {
         instance = new TextGame();
         instance.loadGame();

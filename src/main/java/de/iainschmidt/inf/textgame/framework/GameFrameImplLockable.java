@@ -7,4 +7,17 @@ package de.iainschmidt.inf.textgame.framework;
  * crated for INF-11-Abschlussabgabe
  */
 public abstract class GameFrameImplLockable implements GameFrame, Inventoryable, Lockable {
+
+
+    boolean visited = false;
+
+    @Override
+    public boolean isVisited() {
+        return visited;
+    }
+
+    @Override
+    public void setVisited(boolean visited) {
+        this.visited = visited;
+    }
 }

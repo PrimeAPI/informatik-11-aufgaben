@@ -1,14 +1,14 @@
 package de.iainschmidt.inf.textgame.game.specialrooms;
 
 import de.iainschmidt.inf.textgame.TextGame;
-import de.iainschmidt.inf.textgame.framework.Button;
-import de.iainschmidt.inf.textgame.framework.ButtonOrientation;
-import de.iainschmidt.inf.textgame.framework.GameFrame;
+import de.iainschmidt.inf.textgame.framework.*;
+import de.iainschmidt.inf.textgame.game.Item;
 import de.iainschmidt.inf.textgame.game.Room;
 import de.iainschmidt.inf.textgame.utils.RoomChangeAction;
 import de.iainschmidt.inf.textgame.utils.RoomChangeButton;
 
 import javax.swing.*;
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -16,7 +16,7 @@ import java.util.Random;
  * created on 29.06.2021
  * crated for INF-11-Abschlussabgabe
  */
-public class ABouroEntry implements GameFrame {
+public class ABouroEntry extends GameFrameImpl {
 
     /**
      * Randomly generated {@link TextGame#loadGame()}
@@ -38,8 +38,11 @@ public class ABouroEntry implements GameFrame {
     @Override
     public String getText() {
         if (input == null) {
-            return "Das Büro ist mit einer Pin gesichert! Irgendwo muss die Pin doch stehen.\n\n\n" +
-                    "Falls du Hilfe brauchst gibt es eine Hilfestellung!";
+            return """
+                    Das Büro ist mit einer Pin gesichert! Irgendwo muss die Pin doch stehen.
+
+
+                    Falls du Hilfe brauchst gibt es eine Hilfestellung!""";
         }
 
         if (passcode.equals(input)) {
@@ -79,5 +82,14 @@ public class ABouroEntry implements GameFrame {
         if (passcode.equals(input)) {
             new RoomChangeAction(this, Room.A_BOURO.getFrame()).onClick();
         }
+    }
+
+    @Override
+    public ArrayList<Item> getItems() {
+        return null;
+    }
+
+    @Override
+    public void removeItem(Item item) {
     }
 }
