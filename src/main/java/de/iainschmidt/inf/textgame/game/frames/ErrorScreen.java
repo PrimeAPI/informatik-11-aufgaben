@@ -12,8 +12,8 @@ import de.iainschmidt.inf.textgame.utils.RoomChangeAction;
  */
 public class ErrorScreen implements GameFrame {
 
-    String message;
-    GameFrame from;
+    final String message;
+    final GameFrame from;
 
     public ErrorScreen(String message, GameFrame from) {
         this.message = message;

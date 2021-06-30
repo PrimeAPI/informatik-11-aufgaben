@@ -15,7 +15,7 @@ import de.iainschmidt.inf.textgame.game.frames.ErrorScreen;
  */
 public class RoomChangeAction implements ButtonAction {
 
-    public GameFrame from;
+    public final GameFrame from;
     public GameFrame to;
     public Room room;
     public boolean ignoreKey = false;
@@ -42,9 +42,8 @@ public class RoomChangeAction implements ButtonAction {
         if (to == null) {
             to = room.getFrame();
         }
-        if (to instanceof Lockable) {
+        if (to instanceof Lockable lockable) {
             System.out.println("is lockable");
-            Lockable lockable = (Lockable) to;
             boolean pass = false;
             for (Item item : TextGame.getInstance().getInventory()) {
                 System.out.println(item.getDisplayname());

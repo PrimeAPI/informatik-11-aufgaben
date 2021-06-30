@@ -19,7 +19,7 @@ import java.util.List;
 public class GraphicalUserInterface extends JFrame {
 
     private static final String TITLE = "Escape the Maxe";
-    List<Component> components = new ArrayList<>();
+    final List<Component> components = new ArrayList<>();
     private GameFrame frame;
 
     public GraphicalUserInterface(GameFrame frame) {
@@ -118,50 +118,45 @@ public class GraphicalUserInterface extends JFrame {
 
         for (Button button : frame.getButtons()) {
             switch (button.getOrientation()) {
-                case SPECIAL: {
+                case SPECIAL -> {
                     JButton jButton = new JButton(button.getText());
                     jButton.setBounds(430, special, 150, 30);
                     add(jButton);
                     jButton.addActionListener(e -> button.getAction().onClick());
                     components.add(jButton);
                     special += 40;
-                    break;
                 }
-                case TOP: {
+                case TOP -> {
                     JButton jButton = new JButton(button.getText());
                     jButton.setBounds(170, top, 250, 30);
                     add(jButton);
                     jButton.addActionListener(e -> button.getAction().onClick());
                     components.add(jButton);
                     top += 40;
-                    break;
                 }
-                case BUTTON: {
+                case BUTTON -> {
                     JButton jButton = new JButton(button.getText());
                     jButton.setBounds(170, bottom, 250, 30);
                     add(jButton);
                     jButton.addActionListener(e -> button.getAction().onClick());
                     components.add(jButton);
                     bottom += 40;
-                    break;
                 }
-                case LEFT: {
+                case LEFT -> {
                     JButton jButton = new JButton(button.getText());
                     jButton.setBounds(10, left, 150, 30);
                     add(jButton);
                     jButton.addActionListener(e -> button.getAction().onClick());
                     components.add(jButton);
                     left += 40;
-                    break;
                 }
-                case RIGHT: {
+                case RIGHT -> {
                     JButton jButton = new JButton(button.getText());
                     jButton.setBounds(430, right, 150, 30);
                     add(jButton);
                     jButton.addActionListener(e -> button.getAction().onClick());
                     components.add(jButton);
                     right += 40;
-                    break;
                 }
             }
         }

@@ -14,7 +14,7 @@ import de.iainschmidt.inf.textgame.utils.RoomChangeAction;
  */
 public class InventoryFrame implements GameFrame {
 
-    public GameFrame prev;
+    public final GameFrame prev;
 
     public InventoryFrame(GameFrame prev) {
         this.prev = prev;
@@ -32,11 +32,11 @@ public class InventoryFrame implements GameFrame {
 
     @Override
     public String getText() {
-        String s = "Du hast folgende Items in deiner Tasche:\n";
+        StringBuilder s = new StringBuilder("Du hast folgende Items in deiner Tasche:\n");
         for (Item item : TextGame.getInstance().getInventory()) {
-            s += "- 1x " + item.getDisplayname() + "\n";
+            s.append("- 1x ").append(item.getDisplayname()).append("\n");
         }
-        return s;
+        return s.toString();
     }
 
     @Override

@@ -24,7 +24,7 @@ public enum Item {
     KLANGSTAEBE("Klangstäbe");
 
 
-    String displayname;
+    final String displayname;
     KeyLevel[] keyLevels = new KeyLevel[]{};
 
     Item(String displayname) {

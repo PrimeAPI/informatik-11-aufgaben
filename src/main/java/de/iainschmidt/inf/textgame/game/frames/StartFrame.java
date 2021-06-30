@@ -12,7 +12,7 @@ import de.iainschmidt.inf.textgame.utils.RoomChangeAction;
  */
 public class StartFrame implements GameFrame {
 
-    GameFrame nextRoom;
+    final GameFrame nextRoom;
 
     public StartFrame(GameFrame nextRoom) {
         this.nextRoom = nextRoom;
@@ -35,10 +35,9 @@ public class StartFrame implements GameFrame {
 
     @Override
     public Button[] getButtons() {
-        Button[] buttons = {
+        return new Button[]{
                 new Button("Start!", new RoomChangeAction(this, nextRoom, true), ButtonOrientation.TOP),
         };
-        return buttons;
     }
 
     @Override

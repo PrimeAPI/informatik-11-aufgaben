@@ -2,7 +2,6 @@ package de.iainschmidt.inf.textgame.map.b.ground;
 
 import de.iainschmidt.inf.textgame.framework.Button;
 import de.iainschmidt.inf.textgame.framework.ButtonOrientation;
-import de.iainschmidt.inf.textgame.framework.GameFrame;
 import de.iainschmidt.inf.textgame.framework.GameFrameImpl;
 import de.iainschmidt.inf.textgame.game.Item;
 import de.iainschmidt.inf.textgame.game.Room;
